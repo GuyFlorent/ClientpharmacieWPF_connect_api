@@ -1,0 +1,137 @@
+﻿<Window x:Class="ClientpharmacieWPF.FenetreCliente1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClientpharmacieWPF"
+        mc:Ignorable="d"
+        Title="FenetreCliente1" Height="450" Width="800">
+    <DockPanel Background="Beige">
+        <StackPanel DockPanel.Dock="top">
+            <Label x:Name="lab_titre"  Foreground="DarkMagenta"></Label>
+        </StackPanel>
+        <TabControl x:Name="mon_tabcontrol" Background="Cyan">
+            <TabItem >
+                <TabItem.Header>
+                    <TextBlock Text="Clients" Width="50"></TextBlock>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="450"></ColumnDefinition>
+
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="20"></RowDefinition>
+                                <RowDefinition Height="auto"></RowDefinition>
+                                <RowDefinition Height="20"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="20"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="20"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="20"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <WrapPanel Grid.Row="1">
+                                <Label Content="Nom " Width="100"></Label>
+                                <TextBox x:Name="txtNom" Text="" Width="180" ></TextBox>
+                            </WrapPanel>
+                            <WrapPanel Grid.Row="3">
+                                <Label Content="Prenom " Width="100"></Label>
+                                <TextBox x:Name="txtPrenom" Text="" Width="180" ></TextBox>
+                            </WrapPanel>
+                            <WrapPanel Grid.Row="5">
+                                <Label Content="Email " Width="100"></Label>
+                                <TextBox x:Name="txtEmail" Text="" Width="180" ></TextBox>
+                            </WrapPanel>
+                            <WrapPanel Grid.Row="7">
+                                <Label Content="Mot de passe " Width="100"></Label>
+                                <PasswordBox x:Name="txtPassword" Width="180"></PasswordBox>
+                            </WrapPanel>
+                            <WrapPanel Grid.Row="9">
+
+                                <TextBlock Text="" Width="20"></TextBlock>
+                                <Button x:Name="btnModier" Content="Modifier"  Width="90" ></Button>
+                                <TextBlock Text="" Width="20"></TextBlock>
+                                <Button x:Name="btnSupprimer" Content="Supprimer"  Width="90" ></Button>
+                            </WrapPanel>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" />
+                </Grid>
+            </TabItem>
+
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock x:Name="MaCommande" Text="Commande"></TextBlock>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="16*"/>
+                        <ColumnDefinition Width="377*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="90"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Grid.ColumnSpan="2">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="169*"></ColumnDefinition>
+                                <ColumnDefinition Width="28*"/>
+                                <ColumnDefinition Width="197*"></ColumnDefinition>
+                                <ColumnDefinition Width="196*"></ColumnDefinition>
+                                <ColumnDefinition Width="196*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                                <TextBlock Text="Nom du client"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+                                <TextBlock  Name="lab_nomClient"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Row="0" Grid.Column="2">
+                                <TextBlock Text="liste des Produits"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Row="1" Grid.Column="2">
+                                <ComboBox ItemsSource="{Binding nom_produit_stock}" Name="listeBoxProduit" ></ComboBox>
+                            </StackPanel>
+                            <StackPanel Grid.Row="0" Grid.Column="3">
+                                <TextBlock Text="Quantité du produit"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Row="1" Grid.Column="3">
+                                <TextBox x:Name="txtquantite_cmd"></TextBox>
+                            </StackPanel>
+                            <StackPanel Grid.Row="0" Grid.Column="4">
+                                <TextBlock Text="Prix total"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Row="1" Grid.Column="4">
+                                <TextBox></TextBox>
+                                <StackPanel Grid.Row="2" Grid.Column="0">
+                                    <Button Content="valider" Click="Button_Click_1" />
+                                </StackPanel>
+                                <StackPanel Grid.Row="2" Grid.Column="0">
+                                    <TextBlock Height="10"></TextBlock>
+                                    <Button Content="verifier stock"  />
+                                </StackPanel>
+                                <StackPanel Grid.Row="2" Grid.Column="0"/>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.ColumnSpan="2" />
+                </Grid>
+            </TabItem>
+
+
+        </TabControl>
+    </DockPanel>
+
+</Window>
