@@ -103,4 +103,32 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="modifierClients">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Wcf_Pharmacie" minOccurs="0" name="client" nillable="true" type="q5:ClientReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="modifierClientsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="modifierClientsResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="supprimerClients">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Wcf_Pharmacie" minOccurs="0" name="client" nillable="true" type="q6:ClientReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="supprimerClientsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="supprimerClientsResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

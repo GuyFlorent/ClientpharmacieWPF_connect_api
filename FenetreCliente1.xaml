@@ -10,7 +10,7 @@
         <StackPanel DockPanel.Dock="top">
             <Label x:Name="lab_titre"  Foreground="DarkMagenta"></Label>
         </StackPanel>
-        <TabControl x:Name="mon_tabcontrol" Background="Cyan">
+        <TabControl x:Name="mon_tabcontrol" Background="Cyan" >
             <TabItem >
                 <TabItem.Header>
                     <TextBlock Text="Clients" Width="50"></TextBlock>
@@ -37,7 +37,7 @@
                             </Grid.RowDefinitions>
                             <WrapPanel Grid.Row="1">
                                 <Label Content="Nom " Width="100"></Label>
-                                <TextBox x:Name="txtNom" Text="" Width="180" ></TextBox>
+                                <TextBox x:Name="txtNom"  Width="180" ></TextBox>
                             </WrapPanel>
                             <WrapPanel Grid.Row="3">
                                 <Label Content="Prenom " Width="100"></Label>
@@ -54,9 +54,9 @@
                             <WrapPanel Grid.Row="9">
 
                                 <TextBlock Text="" Width="20"></TextBlock>
-                                <Button x:Name="btnModier" Content="Modifier"  Width="90" ></Button>
+                                <Button x:Name="btnModier" Content="Modifier"  Width="90" Click="btnModier_Click" ></Button>
                                 <TextBlock Text="" Width="20"></TextBlock>
-                                <Button x:Name="btnSupprimer" Content="Supprimer"  Width="90" ></Button>
+                                <Button x:Name="btnSupprimer" Content="Supprimer"  Width="90" Click="btnSupprimer_Click" ></Button>
                             </WrapPanel>
                         </Grid>
                     </StackPanel>
@@ -102,7 +102,7 @@
                                 <TextBlock Text="liste des Produits"></TextBlock>
                             </StackPanel>
                             <StackPanel Grid.Row="1" Grid.Column="2">
-                                <ComboBox ItemsSource="{Binding nom_produit_stock}" Name="listeBoxProduit" ></ComboBox>
+                                <ComboBox ItemsSource="{Binding nom_produit_stock}" Name="listeBoxProduit"  ></ComboBox>
                             </StackPanel>
                             <StackPanel Grid.Row="0" Grid.Column="3">
                                 <TextBlock Text="Quantité du produit"></TextBlock>
@@ -120,7 +120,7 @@
                                 </StackPanel>
                                 <StackPanel Grid.Row="2" Grid.Column="0">
                                     <TextBlock Height="10"></TextBlock>
-                                    <Button Content="verifier stock"  />
+                                    
                                 </StackPanel>
                                 <StackPanel Grid.Row="2" Grid.Column="0"/>
                             </StackPanel>

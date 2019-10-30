@@ -1010,6 +1010,18 @@ namespace ClientpharmacieWPF.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/recupereParEmail", ReplyAction="http://tempuri.org/IService1/recupereParEmailResponse")]
         System.Threading.Tasks.Task<ClientpharmacieWPF.ServiceReference1.ClientReturn> recupereParEmailAsync(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/modifierClients", ReplyAction="http://tempuri.org/IService1/modifierClientsResponse")]
+        string modifierClients(ClientpharmacieWPF.ServiceReference1.ClientReturn client);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/modifierClients", ReplyAction="http://tempuri.org/IService1/modifierClientsResponse")]
+        System.Threading.Tasks.Task<string> modifierClientsAsync(ClientpharmacieWPF.ServiceReference1.ClientReturn client);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/supprimerClients", ReplyAction="http://tempuri.org/IService1/supprimerClientsResponse")]
+        string supprimerClients(ClientpharmacieWPF.ServiceReference1.ClientReturn client);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/supprimerClients", ReplyAction="http://tempuri.org/IService1/supprimerClientsResponse")]
+        System.Threading.Tasks.Task<string> supprimerClientsAsync(ClientpharmacieWPF.ServiceReference1.ClientReturn client);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1093,6 +1105,22 @@ namespace ClientpharmacieWPF.ServiceReference1 {
         
         public System.Threading.Tasks.Task<ClientpharmacieWPF.ServiceReference1.ClientReturn> recupereParEmailAsync(string email) {
             return base.Channel.recupereParEmailAsync(email);
+        }
+        
+        public string modifierClients(ClientpharmacieWPF.ServiceReference1.ClientReturn client) {
+            return base.Channel.modifierClients(client);
+        }
+        
+        public System.Threading.Tasks.Task<string> modifierClientsAsync(ClientpharmacieWPF.ServiceReference1.ClientReturn client) {
+            return base.Channel.modifierClientsAsync(client);
+        }
+        
+        public string supprimerClients(ClientpharmacieWPF.ServiceReference1.ClientReturn client) {
+            return base.Channel.supprimerClients(client);
+        }
+        
+        public System.Threading.Tasks.Task<string> supprimerClientsAsync(ClientpharmacieWPF.ServiceReference1.ClientReturn client) {
+            return base.Channel.supprimerClientsAsync(client);
         }
     }
 }
