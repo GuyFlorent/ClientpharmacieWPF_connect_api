@@ -965,6 +965,131 @@ namespace ClientpharmacieWPF.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="orderHisto", Namespace="http://schemas.datacontract.org/2004/07/Wcf_Pharmacie")]
+    [System.SerializableAttribute()]
+    public partial class orderHisto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string heureCommandField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string nom_ProduitField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double prix_Produit_UniteField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double prix_totalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int quantiteField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string statutLivraisonField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string heureCommand {
+            get {
+                return this.heureCommandField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.heureCommandField, value) != true)) {
+                    this.heureCommandField = value;
+                    this.RaisePropertyChanged("heureCommand");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string nom_Produit {
+            get {
+                return this.nom_ProduitField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.nom_ProduitField, value) != true)) {
+                    this.nom_ProduitField = value;
+                    this.RaisePropertyChanged("nom_Produit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double prix_Produit_Unite {
+            get {
+                return this.prix_Produit_UniteField;
+            }
+            set {
+                if ((this.prix_Produit_UniteField.Equals(value) != true)) {
+                    this.prix_Produit_UniteField = value;
+                    this.RaisePropertyChanged("prix_Produit_Unite");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double prix_total {
+            get {
+                return this.prix_totalField;
+            }
+            set {
+                if ((this.prix_totalField.Equals(value) != true)) {
+                    this.prix_totalField = value;
+                    this.RaisePropertyChanged("prix_total");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int quantite {
+            get {
+                return this.quantiteField;
+            }
+            set {
+                if ((this.quantiteField.Equals(value) != true)) {
+                    this.quantiteField = value;
+                    this.RaisePropertyChanged("quantite");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string statutLivraison {
+            get {
+                return this.statutLivraisonField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.statutLivraisonField, value) != true)) {
+                    this.statutLivraisonField = value;
+                    this.RaisePropertyChanged("statutLivraison");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
@@ -1022,6 +1147,12 @@ namespace ClientpharmacieWPF.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/supprimerClients", ReplyAction="http://tempuri.org/IService1/supprimerClientsResponse")]
         System.Threading.Tasks.Task<string> supprimerClientsAsync(ClientpharmacieWPF.ServiceReference1.ClientReturn client);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getcommandehisto", ReplyAction="http://tempuri.org/IService1/getcommandehistoResponse")]
+        ClientpharmacieWPF.ServiceReference1.orderHisto[] getcommandehisto(ClientpharmacieWPF.ServiceReference1.ClientReturn client);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getcommandehisto", ReplyAction="http://tempuri.org/IService1/getcommandehistoResponse")]
+        System.Threading.Tasks.Task<ClientpharmacieWPF.ServiceReference1.orderHisto[]> getcommandehistoAsync(ClientpharmacieWPF.ServiceReference1.ClientReturn client);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1121,6 +1252,14 @@ namespace ClientpharmacieWPF.ServiceReference1 {
         
         public System.Threading.Tasks.Task<string> supprimerClientsAsync(ClientpharmacieWPF.ServiceReference1.ClientReturn client) {
             return base.Channel.supprimerClientsAsync(client);
+        }
+        
+        public ClientpharmacieWPF.ServiceReference1.orderHisto[] getcommandehisto(ClientpharmacieWPF.ServiceReference1.ClientReturn client) {
+            return base.Channel.getcommandehisto(client);
+        }
+        
+        public System.Threading.Tasks.Task<ClientpharmacieWPF.ServiceReference1.orderHisto[]> getcommandehistoAsync(ClientpharmacieWPF.ServiceReference1.ClientReturn client) {
+            return base.Channel.getcommandehistoAsync(client);
         }
     }
 }

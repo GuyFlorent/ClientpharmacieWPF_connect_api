@@ -106,6 +106,9 @@
     <None Include="Connected Services\ServiceReference1\ClientpharmacieWPF.ServiceReference1.CompositeType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiceReference1\ClientpharmacieWPF.ServiceReference1.orderHisto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReference1\ClientpharmacieWPF.ServiceReference1.ProduitReturn.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

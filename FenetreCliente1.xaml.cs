@@ -22,22 +22,15 @@ namespace ClientpharmacieWPF
     {
         Service1Client svc = new Service1Client();
         List<ProduitReturn> listeStock;
-        
+        List<orderHisto> listeOrder;
+         
         private ClientReturn client1;
         public FenetreCliente1(ClientReturn cli )
         {
             InitializeComponent();
 
             this.client1 = cli;
-            var listeStock = svc.listeProduit();
-            listeBoxProduit.ItemsSource = listeStock; // ajout de la liste des produit dans le combobox
-            listeBoxProduit.DisplayMemberPath = "nom_produit_stock";//suite
-            listeBoxProduit.SelectedIndex = 0;//suite
-
-            
-            lab_nomClient.Text = cli.nom +" "+ cli.prenom; 
-            lab_titre.Content = cli.nom;
-            txtNom.Text = cli.nom;
+            actualliser();
         }
 
         
@@ -47,6 +40,7 @@ namespace ClientpharmacieWPF
             string nomProduit = listeBoxProduit.Text;
             string quantite = txtquantite_cmd.Text;
             svc.passerCommande(nomClient, nomProduit, Convert.ToInt32(quantite));
+            actualliser();
         }
 
         private void btnModier_Click(object sender, RoutedEventArgs e)
@@ -56,6 +50,7 @@ namespace ClientpharmacieWPF
             this.client1.email = txtEmail.Text;
             this.client1.password = txtPassword.Password;
             svc.modifierClients(this.client1);
+            actualliser();
         }
 
         private void btnSupprimer_Click(object sender, RoutedEventArgs e)
@@ -65,8 +60,32 @@ namespace ClientpharmacieWPF
                 svc.supprimerClients(this.client1);
                 
                 MessageBox.Show("supprimer avec succes");
+                actualliser();
                 
+                MainWindow mn = new MainWindow();
+                mn.Show();
+                this.Close();
+
             }
+        }
+
+        public void actualliser()
+        {
+            var listeStock = svc.listeProduit();
+            listeBoxProduit.ItemsSource = listeStock; // ajout de la liste des produit dans le combobox
+            listeBoxProduit.DisplayMemberPath = "nom_produit_stock";//suite
+            listeBoxProduit.SelectedIndex = 0;//suite
+
+
+            lab_nomClient.Text = this.client1.nom + " " + this.client1.prenom;
+            lab_titre.Content = this.client1.nom;
+            txtNom.Text = this.client1.nom;
+            var listeOrder = svc.getcommandehisto(this.client1);
+            foreach(var a in listeOrder)
+            {
+                maListeBox.Items.Add(a.nom_Produit );
+            }
+
         }
 
        

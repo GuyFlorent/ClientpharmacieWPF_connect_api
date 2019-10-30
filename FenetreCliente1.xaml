@@ -126,7 +126,11 @@
                             </StackPanel>
                         </Grid>
                     </StackPanel>
-                    <StackPanel Grid.Row="1" Grid.ColumnSpan="2" />
+                    <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+                        <ListBox x:Name="maListeBox">
+                            
+                        </ListBox>
+                    </StackPanel>
                 </Grid>
             </TabItem>
 

@@ -109,4 +109,21 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ClientReturn" nillable="true" type="tns:ClientReturn" />
+  <xs:complexType name="ArrayOforderHisto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="orderHisto" nillable="true" type="tns:orderHisto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOforderHisto" nillable="true" type="tns:ArrayOforderHisto" />
+  <xs:complexType name="orderHisto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="heureCommand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nom_Produit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prix_Produit_Unite" type="xs:double" />
+      <xs:element minOccurs="0" name="prix_total" type="xs:double" />
+      <xs:element minOccurs="0" name="quantite" type="xs:int" />
+      <xs:element minOccurs="0" name="statutLivraison" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="orderHisto" nillable="true" type="tns:orderHisto" />
 </xs:schema>
