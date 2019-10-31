@@ -30,7 +30,7 @@ namespace ClientpharmacieWPF
         List<ProduitReturn> listeStock;
         List<orderHisto> listeOrder;
 
-        private ClientReturn client1;
+        public ClientReturn client1;
         public FenetreCliente1(ClientReturn cli)
         {
             InitializeComponent();
@@ -46,9 +46,10 @@ namespace ClientpharmacieWPF
             string nomProduit = listeBoxProduit.Text;
             string quantite = txtquantite_cmd.Text;
             svc.passerCommande(nomClient, nomProduit, Convert.ToInt32(quantite));
-           
+            receipt receipt = new receipt(this.client1);
+            receipt.Show();
             actualliser();
-            print();
+           
         }
 
         private void btnModier_Click(object sender, RoutedEventArgs e)
@@ -58,6 +59,7 @@ namespace ClientpharmacieWPF
             this.client1.email = txtEmail.Text;
             this.client1.password = txtPassword.Password;
             svc.modifierClients(this.client1);
+          
             actualliser();
         }
 

@@ -127,25 +127,11 @@
                         </Grid>
                     </StackPanel>
                     <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+                        <ScrollViewer>
                         <ListBox x:Name="maListeBox" ItemsSource="{Binding}" VerticalAlignment="Stretch">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
-                                    <Grid >
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"></ColumnDefinition>
-                                            <ColumnDefinition Width="*"></ColumnDefinition>
-                                            <ColumnDefinition Width="*"></ColumnDefinition>
-                                            <ColumnDefinition Width="*"></ColumnDefinition>
-                                        </Grid.ColumnDefinitions>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="80"></RowDefinition>
-                                            <RowDefinition Height="auto"></RowDefinition>
-                                        </Grid.RowDefinitions>
-                                        <StackPanel Grid.Row="0">
-                                            <Label Content="Heure de commande" Grid.Column="0"></Label>
-                                            <Label Content="Nom du produit" Grid.Column="1"></Label>
-                                            <Label Content="Heure de commande" Grid.Column="0"></Label>
-                                        </StackPanel>
+                                       
                                     <StackPanel Orientation="Horizontal" Grid.Row="1">
                                         <Label Content="- "></Label>
                                         <Label Content="{Binding heureCommand}" ></Label>
@@ -155,10 +141,11 @@
                                         <Label Content="{Binding prix_total}"></Label>
                                         <Label Content="{Binding statutLivraison}"></Label>
                                     </StackPanel>
-                                    </Grid>
+                                    
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>
+                        </ScrollViewer>
                     </StackPanel>
                 </Grid>
             </TabItem>
