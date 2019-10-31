@@ -127,8 +127,9 @@
                         </Grid>
                     </StackPanel>
                     <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
-                        <ScrollViewer>
-                        <ListBox x:Name="maListeBox" ItemsSource="{Binding}" VerticalAlignment="Stretch">
+                       
+                            <StackPanel>
+                        <ListBox x:Name="maListeBox" ItemsSource="{Binding}" Height="100" ScrollViewer.VerticalScrollBarVisibility="Visible" >
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
                                        
@@ -145,7 +146,8 @@
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>
-                        </ScrollViewer>
+                            </StackPanel>
+                        
                     </StackPanel>
                 </Grid>
             </TabItem>

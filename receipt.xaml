@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClientpharmacieWPF"
         mc:Ignorable="d"
-        Title="receipt" Height="450" Width="800">
+        Title="receipt" Height="758" Width="800">
     <ScrollViewer>
         <Grid>
             <Button HorizontalAlignment="Right" Margin="10"  VerticalAlignment="Top">
@@ -135,23 +135,23 @@
                             </StackPanel>
                         </StackPanel>
                         <StackPanel Grid.Column="1">
-                            <TextBlock Text="18 Jul '19" FontSize="25" Margin="5"/>
+                            <TextBlock x:Name="txt_date_Jour"  FontSize="25" Margin="5"/>
                         </StackPanel>
                         <StackPanel Grid.Column="2">
-                            <TextBlock Text="$ 1,590.00" FontSize="25" Margin="5" HorizontalAlignment="Right" Foreground="#FF62013C" FontWeight="Bold"/>
+                            <TextBlock x:Name="txt_Total_Price"  FontSize="25" Margin="5" HorizontalAlignment="Right" Foreground="#FF62013C" FontWeight="Bold"/>
                         </StackPanel>
                     </Grid>
                     <Rectangle Fill="Black" Height="1" Margin="5" Opacity="0.5"/>
 
                     <Grid Margin="0 20" HorizontalAlignment="Stretch">
                         <StackPanel Orientation="Horizontal">
-                        
-                            <TextBlock Text="Thank you!" VerticalAlignment="Center" FontSize="20" Margin="5" FontWeight="Light"/>
+                            <Button Content="imprimer" Click="Button_Click" />
+                            <TextBlock Text="Merci!" VerticalAlignment="Center" FontSize="20" Margin="5" FontWeight="Light"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
-                            <TextBlock Text="name@email.com" VerticalAlignment="Center" FontSize="8" Margin="5" FontWeight="Light"/>
-                            <TextBlock Text="99 9999-9999" VerticalAlignment="Center" FontSize="8" Margin="5" FontWeight="Light"/>
-                            <TextBlock Text="website.com" VerticalAlignment="Center" FontSize="8" Margin="5" FontWeight="Light"/>
+                            <TextBlock Text="pharmacie@email.com" VerticalAlignment="Center" FontSize="8" Margin="5" FontWeight="Light"/>
+                            <TextBlock Text="0033 6 54 214 85" VerticalAlignment="Center" FontSize="8" Margin="5" FontWeight="Light"/>
+                            <TextBlock Text="pharmacie.com" VerticalAlignment="Center" FontSize="8" Margin="5" FontWeight="Light"/>
                         </StackPanel>
                     </Grid>
                 </StackPanel>

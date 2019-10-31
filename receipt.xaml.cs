@@ -35,6 +35,25 @@ namespace ClientpharmacieWPF
             txt_Prix_Unite.Text = Order.prix_Produit_Unite.ToString()+" €";
             txtQuantité.Text = Order.quantite.ToString();
             txtPrix_Total.Text = Order.prix_total.ToString() + " €";
+            txt_Total_Price.Text = Order.prix_total.ToString() + " €";
+            txt_date_Jour.Text = Order.heureCommand;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                this.IsEnabled = false;
+                PrintDialog printDialog = new PrintDialog();
+                if (printDialog.ShowDialog() == true)
+                {
+                    printDialog.PrintVisual(print, "invoice");
+                }
+            }
+            finally
+            {
+                this.IsEnabled = true;
+            }
         }
     }
 }
