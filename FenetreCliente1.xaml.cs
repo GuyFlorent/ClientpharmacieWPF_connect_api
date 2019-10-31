@@ -12,6 +12,12 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Diagnostics;
+using System.IO;
+using System.Drawing.Printing;
+using System.Drawing;
+using System.Collections;
+using Color = System.Drawing.Color;
 
 namespace ClientpharmacieWPF
 {
@@ -23,9 +29,9 @@ namespace ClientpharmacieWPF
         Service1Client svc = new Service1Client();
         List<ProduitReturn> listeStock;
         List<orderHisto> listeOrder;
-         
+
         private ClientReturn client1;
-        public FenetreCliente1(ClientReturn cli )
+        public FenetreCliente1(ClientReturn cli)
         {
             InitializeComponent();
 
@@ -33,14 +39,16 @@ namespace ClientpharmacieWPF
             actualliser();
         }
 
-        
+
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             string nomClient = client1.nom;
             string nomProduit = listeBoxProduit.Text;
             string quantite = txtquantite_cmd.Text;
             svc.passerCommande(nomClient, nomProduit, Convert.ToInt32(quantite));
+           
             actualliser();
+            print();
         }
 
         private void btnModier_Click(object sender, RoutedEventArgs e)
@@ -55,13 +63,13 @@ namespace ClientpharmacieWPF
 
         private void btnSupprimer_Click(object sender, RoutedEventArgs e)
         {
-            if(MessageBox.Show(client1.nom+" etes vous sur de vouloir votre supprimer?", "Allerte !!", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            if (MessageBox.Show(client1.nom + " etes vous sur de vouloir votre supprimer?", "Allerte !!", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 svc.supprimerClients(this.client1);
-                
+
                 MessageBox.Show("supprimer avec succes");
                 actualliser();
-                
+
                 MainWindow mn = new MainWindow();
                 mn.Show();
                 this.Close();
@@ -80,14 +88,27 @@ namespace ClientpharmacieWPF
             lab_nomClient.Text = this.client1.nom + " " + this.client1.prenom;
             lab_titre.Content = this.client1.nom;
             txtNom.Text = this.client1.nom;
-            var listeOrder = svc.getcommandehisto(this.client1);
-            foreach(var a in listeOrder)
-            {
-                maListeBox.Items.Add(a.nom_Produit );
-            }
+            var listeOrder = svc.getcommandehisto(this.client1).OrderByDescending(f=> f.heureCommand);
 
+            maListeBox.DataContext = listeOrder;
+            
+              /* foreach (var a in listeOrder)
+                {
+                    if (!maListeBox.Items.Contains(a.nom_Produit))
+                    {
+                        maListeBox.Items.Add(a.nom_Produit + "   Prix à l'unité :   " + a.prix_Produit_Unite + "  Quantitée  :  " + a.quantite + "   Prix total  :  " + a.prix_total + " € " + " Date et Heure de Commande  :   " + a.heureCommand + "   Statut de livraison   :    " + a.statutLivraison);
+
+                    maListeBox.Items.Refresh();
+                    }
+                    else
+                    {
+                        Console.WriteLine("error");
+                    }
+
+                }*/
+       
         }
 
-       
+      
     }
 }
