@@ -26,8 +26,9 @@ namespace ClientpharmacieWPF
         public receipt(ClientReturn client1)
         {
             InitializeComponent();
+
             this.clientReceipt = client1;
-           var Order = svc.getcommandehisto(client1).OrderByDescending(f=>f.heureCommand).FirstOrDefault();
+            var Order = svc.getcommandehisto(client1).OrderBy(f => f.heureCommand).FirstOrDefault();
             
             txtnomClient.Text = client1.nom +"  "+client1.prenom;
             txtDateCommande.Text = Order.heureCommand;

@@ -22,6 +22,7 @@ namespace ClientpharmacieWPF
     public partial class MainWindow : Window
     {
         Service1Client svc = new Service1Client();
+        private Client cli;
         public MainWindow()
         {
             InitializeComponent();
@@ -29,9 +30,26 @@ namespace ClientpharmacieWPF
 
         private void btnInscription_Click(object sender, RoutedEventArgs e)
         {
-            svc.ajouterclients(txtNom.Text, txtPrenom.Text, txtEmail.Text, txtPassword.Password);
-            //vider(); 
-            MessageBox.Show("Ajouter avec succes!");
+
+            if (string.IsNullOrEmpty(txtNom.Text) || string.IsNullOrEmpty(txtPassword.Password) || string.IsNullOrEmpty(txtEmail.Text)
+                || string.IsNullOrEmpty(txtPrenom.Text))
+            {
+                MessageBox.Show(" un ou plusieurs Champs sont vide !!!");
+
+            }
+            else
+            {
+                try
+                {
+                    cli = new Client();
+                    cli.nom = txtNom.Text;
+                    cli.prenom = txtPrenom.Text;
+                    cli.email = txtEmail.Text;
+                    cli.password = txtPassword.Password;
+                    svc.ajouterclients(cli);
+                    MessageBox.Show(svc.ajouterclients(cli).ToString());
+                }catch (Exception) { MessageBox.Show("changer de email!!"); }
+            }
         }
 
         private void btnConnexion_Click(object sender, RoutedEventArgs e)

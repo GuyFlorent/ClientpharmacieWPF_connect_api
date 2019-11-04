@@ -76,27 +76,30 @@ namespace ClientpharmacieWPF.ServiceReference2 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ProduitReturn", Namespace="http://schemas.datacontract.org/2004/07/Wcf_Pharmacie")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Client", Namespace="http://schemas.datacontract.org/2004/07/Wcf_Pharmacie")]
     [System.SerializableAttribute()]
-    public partial class ProduitReturn : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Client : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientpharmacieWPF.ServiceReference2.Achat[] AchatsField;
+        private ClientpharmacieWPF.ServiceReference2.Commande[] CommandesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientpharmacieWPF.ServiceReference2.Produit[] ProduitsField;
+        private string emailField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_stockField;
+        private int id_clientField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string nom_produit_stockField;
+        private string nomField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> quantite_produitField;
+        private string passwordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string prenomField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -109,348 +112,79 @@ namespace ClientpharmacieWPF.ServiceReference2 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientpharmacieWPF.ServiceReference2.Achat[] Achats {
+        public ClientpharmacieWPF.ServiceReference2.Commande[] Commandes {
             get {
-                return this.AchatsField;
+                return this.CommandesField;
             }
             set {
-                if ((object.ReferenceEquals(this.AchatsField, value) != true)) {
-                    this.AchatsField = value;
-                    this.RaisePropertyChanged("Achats");
+                if ((object.ReferenceEquals(this.CommandesField, value) != true)) {
+                    this.CommandesField = value;
+                    this.RaisePropertyChanged("Commandes");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientpharmacieWPF.ServiceReference2.Produit[] Produits {
+        public string email {
             get {
-                return this.ProduitsField;
+                return this.emailField;
             }
             set {
-                if ((object.ReferenceEquals(this.ProduitsField, value) != true)) {
-                    this.ProduitsField = value;
-                    this.RaisePropertyChanged("Produits");
+                if ((object.ReferenceEquals(this.emailField, value) != true)) {
+                    this.emailField = value;
+                    this.RaisePropertyChanged("email");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_stock {
+        public int id_client {
             get {
-                return this.id_stockField;
+                return this.id_clientField;
             }
             set {
-                if ((this.id_stockField.Equals(value) != true)) {
-                    this.id_stockField = value;
-                    this.RaisePropertyChanged("id_stock");
+                if ((this.id_clientField.Equals(value) != true)) {
+                    this.id_clientField = value;
+                    this.RaisePropertyChanged("id_client");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string nom_produit_stock {
+        public string nom {
             get {
-                return this.nom_produit_stockField;
+                return this.nomField;
             }
             set {
-                if ((object.ReferenceEquals(this.nom_produit_stockField, value) != true)) {
-                    this.nom_produit_stockField = value;
-                    this.RaisePropertyChanged("nom_produit_stock");
+                if ((object.ReferenceEquals(this.nomField, value) != true)) {
+                    this.nomField = value;
+                    this.RaisePropertyChanged("nom");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> quantite_produit {
+        public string password {
             get {
-                return this.quantite_produitField;
+                return this.passwordField;
             }
             set {
-                if ((this.quantite_produitField.Equals(value) != true)) {
-                    this.quantite_produitField = value;
-                    this.RaisePropertyChanged("quantite_produit");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Achat", Namespace="http://schemas.datacontract.org/2004/07/Wcf_Pharmacie")]
-    [System.SerializableAttribute()]
-    public partial class Achat : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientpharmacieWPF.ServiceReference2.Commande CommandeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientpharmacieWPF.ServiceReference2.Stock StockField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_achatField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_commandeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> id_stockField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> prix_totalField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> quantitéField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientpharmacieWPF.ServiceReference2.Commande Commande {
-            get {
-                return this.CommandeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CommandeField, value) != true)) {
-                    this.CommandeField = value;
-                    this.RaisePropertyChanged("Commande");
+                if ((object.ReferenceEquals(this.passwordField, value) != true)) {
+                    this.passwordField = value;
+                    this.RaisePropertyChanged("password");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientpharmacieWPF.ServiceReference2.Stock Stock {
+        public string prenom {
             get {
-                return this.StockField;
+                return this.prenomField;
             }
             set {
-                if ((object.ReferenceEquals(this.StockField, value) != true)) {
-                    this.StockField = value;
-                    this.RaisePropertyChanged("Stock");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_achat {
-            get {
-                return this.id_achatField;
-            }
-            set {
-                if ((this.id_achatField.Equals(value) != true)) {
-                    this.id_achatField = value;
-                    this.RaisePropertyChanged("id_achat");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_commande {
-            get {
-                return this.id_commandeField;
-            }
-            set {
-                if ((this.id_commandeField.Equals(value) != true)) {
-                    this.id_commandeField = value;
-                    this.RaisePropertyChanged("id_commande");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> id_stock {
-            get {
-                return this.id_stockField;
-            }
-            set {
-                if ((this.id_stockField.Equals(value) != true)) {
-                    this.id_stockField = value;
-                    this.RaisePropertyChanged("id_stock");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> prix_total {
-            get {
-                return this.prix_totalField;
-            }
-            set {
-                if ((this.prix_totalField.Equals(value) != true)) {
-                    this.prix_totalField = value;
-                    this.RaisePropertyChanged("prix_total");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> quantité {
-            get {
-                return this.quantitéField;
-            }
-            set {
-                if ((this.quantitéField.Equals(value) != true)) {
-                    this.quantitéField = value;
-                    this.RaisePropertyChanged("quantité");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Produit", Namespace="http://schemas.datacontract.org/2004/07/Wcf_Pharmacie")]
-    [System.SerializableAttribute()]
-    public partial class Produit : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientpharmacieWPF.ServiceReference2.Stock StockField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string date_heure_ajout_produitField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_produitField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> id_stockField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string nom_produitField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> prix_uniteField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> quantiteField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientpharmacieWPF.ServiceReference2.Stock Stock {
-            get {
-                return this.StockField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StockField, value) != true)) {
-                    this.StockField = value;
-                    this.RaisePropertyChanged("Stock");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string date_heure_ajout_produit {
-            get {
-                return this.date_heure_ajout_produitField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.date_heure_ajout_produitField, value) != true)) {
-                    this.date_heure_ajout_produitField = value;
-                    this.RaisePropertyChanged("date_heure_ajout_produit");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_produit {
-            get {
-                return this.id_produitField;
-            }
-            set {
-                if ((this.id_produitField.Equals(value) != true)) {
-                    this.id_produitField = value;
-                    this.RaisePropertyChanged("id_produit");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> id_stock {
-            get {
-                return this.id_stockField;
-            }
-            set {
-                if ((this.id_stockField.Equals(value) != true)) {
-                    this.id_stockField = value;
-                    this.RaisePropertyChanged("id_stock");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string nom_produit {
-            get {
-                return this.nom_produitField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.nom_produitField, value) != true)) {
-                    this.nom_produitField = value;
-                    this.RaisePropertyChanged("nom_produit");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> prix_unite {
-            get {
-                return this.prix_uniteField;
-            }
-            set {
-                if ((this.prix_uniteField.Equals(value) != true)) {
-                    this.prix_uniteField = value;
-                    this.RaisePropertyChanged("prix_unite");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> quantite {
-            get {
-                return this.quantiteField;
-            }
-            set {
-                if ((this.quantiteField.Equals(value) != true)) {
-                    this.quantiteField = value;
-                    this.RaisePropertyChanged("quantite");
+                if ((object.ReferenceEquals(this.prenomField, value) != true)) {
+                    this.prenomField = value;
+                    this.RaisePropertyChanged("prenom");
                 }
             }
         }
@@ -608,6 +342,147 @@ namespace ClientpharmacieWPF.ServiceReference2 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Achat", Namespace="http://schemas.datacontract.org/2004/07/Wcf_Pharmacie")]
+    [System.SerializableAttribute()]
+    public partial class Achat : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ClientpharmacieWPF.ServiceReference2.Commande CommandeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ClientpharmacieWPF.ServiceReference2.Stock StockField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_achatField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_commandeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> id_stockField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> prix_totalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> quantitéField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ClientpharmacieWPF.ServiceReference2.Commande Commande {
+            get {
+                return this.CommandeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CommandeField, value) != true)) {
+                    this.CommandeField = value;
+                    this.RaisePropertyChanged("Commande");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ClientpharmacieWPF.ServiceReference2.Stock Stock {
+            get {
+                return this.StockField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StockField, value) != true)) {
+                    this.StockField = value;
+                    this.RaisePropertyChanged("Stock");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_achat {
+            get {
+                return this.id_achatField;
+            }
+            set {
+                if ((this.id_achatField.Equals(value) != true)) {
+                    this.id_achatField = value;
+                    this.RaisePropertyChanged("id_achat");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_commande {
+            get {
+                return this.id_commandeField;
+            }
+            set {
+                if ((this.id_commandeField.Equals(value) != true)) {
+                    this.id_commandeField = value;
+                    this.RaisePropertyChanged("id_commande");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> id_stock {
+            get {
+                return this.id_stockField;
+            }
+            set {
+                if ((this.id_stockField.Equals(value) != true)) {
+                    this.id_stockField = value;
+                    this.RaisePropertyChanged("id_stock");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> prix_total {
+            get {
+                return this.prix_totalField;
+            }
+            set {
+                if ((this.prix_totalField.Equals(value) != true)) {
+                    this.prix_totalField = value;
+                    this.RaisePropertyChanged("prix_total");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> quantité {
+            get {
+                return this.quantitéField;
+            }
+            set {
+                if ((this.quantitéField.Equals(value) != true)) {
+                    this.quantitéField = value;
+                    this.RaisePropertyChanged("quantité");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Stock", Namespace="http://schemas.datacontract.org/2004/07/Wcf_Pharmacie")]
     [System.SerializableAttribute()]
     public partial class Stock : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -717,30 +592,33 @@ namespace ClientpharmacieWPF.ServiceReference2 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Client", Namespace="http://schemas.datacontract.org/2004/07/Wcf_Pharmacie")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Produit", Namespace="http://schemas.datacontract.org/2004/07/Wcf_Pharmacie")]
     [System.SerializableAttribute()]
-    public partial class Client : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Produit : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientpharmacieWPF.ServiceReference2.Commande[] CommandesField;
+        private ClientpharmacieWPF.ServiceReference2.Stock StockField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string emailField;
+        private string date_heure_ajout_produitField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_clientField;
+        private int id_produitField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string nomField;
+        private System.Nullable<int> id_stockField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string passwordField;
+        private string nom_produitField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string prenomField;
+        private System.Nullable<decimal> prix_uniteField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> quantiteField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -753,79 +631,201 @@ namespace ClientpharmacieWPF.ServiceReference2 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientpharmacieWPF.ServiceReference2.Commande[] Commandes {
+        public ClientpharmacieWPF.ServiceReference2.Stock Stock {
             get {
-                return this.CommandesField;
+                return this.StockField;
             }
             set {
-                if ((object.ReferenceEquals(this.CommandesField, value) != true)) {
-                    this.CommandesField = value;
-                    this.RaisePropertyChanged("Commandes");
+                if ((object.ReferenceEquals(this.StockField, value) != true)) {
+                    this.StockField = value;
+                    this.RaisePropertyChanged("Stock");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string email {
+        public string date_heure_ajout_produit {
             get {
-                return this.emailField;
+                return this.date_heure_ajout_produitField;
             }
             set {
-                if ((object.ReferenceEquals(this.emailField, value) != true)) {
-                    this.emailField = value;
-                    this.RaisePropertyChanged("email");
+                if ((object.ReferenceEquals(this.date_heure_ajout_produitField, value) != true)) {
+                    this.date_heure_ajout_produitField = value;
+                    this.RaisePropertyChanged("date_heure_ajout_produit");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_client {
+        public int id_produit {
             get {
-                return this.id_clientField;
+                return this.id_produitField;
             }
             set {
-                if ((this.id_clientField.Equals(value) != true)) {
-                    this.id_clientField = value;
-                    this.RaisePropertyChanged("id_client");
+                if ((this.id_produitField.Equals(value) != true)) {
+                    this.id_produitField = value;
+                    this.RaisePropertyChanged("id_produit");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string nom {
+        public System.Nullable<int> id_stock {
             get {
-                return this.nomField;
+                return this.id_stockField;
             }
             set {
-                if ((object.ReferenceEquals(this.nomField, value) != true)) {
-                    this.nomField = value;
-                    this.RaisePropertyChanged("nom");
+                if ((this.id_stockField.Equals(value) != true)) {
+                    this.id_stockField = value;
+                    this.RaisePropertyChanged("id_stock");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string password {
+        public string nom_produit {
             get {
-                return this.passwordField;
+                return this.nom_produitField;
             }
             set {
-                if ((object.ReferenceEquals(this.passwordField, value) != true)) {
-                    this.passwordField = value;
-                    this.RaisePropertyChanged("password");
+                if ((object.ReferenceEquals(this.nom_produitField, value) != true)) {
+                    this.nom_produitField = value;
+                    this.RaisePropertyChanged("nom_produit");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string prenom {
+        public System.Nullable<decimal> prix_unite {
             get {
-                return this.prenomField;
+                return this.prix_uniteField;
             }
             set {
-                if ((object.ReferenceEquals(this.prenomField, value) != true)) {
-                    this.prenomField = value;
-                    this.RaisePropertyChanged("prenom");
+                if ((this.prix_uniteField.Equals(value) != true)) {
+                    this.prix_uniteField = value;
+                    this.RaisePropertyChanged("prix_unite");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> quantite {
+            get {
+                return this.quantiteField;
+            }
+            set {
+                if ((this.quantiteField.Equals(value) != true)) {
+                    this.quantiteField = value;
+                    this.RaisePropertyChanged("quantite");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProduitReturn", Namespace="http://schemas.datacontract.org/2004/07/Wcf_Pharmacie")]
+    [System.SerializableAttribute()]
+    public partial class ProduitReturn : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ClientpharmacieWPF.ServiceReference2.Achat[] AchatsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ClientpharmacieWPF.ServiceReference2.Produit[] ProduitsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_stockField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string nom_produit_stockField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> quantite_produitField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ClientpharmacieWPF.ServiceReference2.Achat[] Achats {
+            get {
+                return this.AchatsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AchatsField, value) != true)) {
+                    this.AchatsField = value;
+                    this.RaisePropertyChanged("Achats");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ClientpharmacieWPF.ServiceReference2.Produit[] Produits {
+            get {
+                return this.ProduitsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProduitsField, value) != true)) {
+                    this.ProduitsField = value;
+                    this.RaisePropertyChanged("Produits");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_stock {
+            get {
+                return this.id_stockField;
+            }
+            set {
+                if ((this.id_stockField.Equals(value) != true)) {
+                    this.id_stockField = value;
+                    this.RaisePropertyChanged("id_stock");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string nom_produit_stock {
+            get {
+                return this.nom_produit_stockField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.nom_produit_stockField, value) != true)) {
+                    this.nom_produit_stockField = value;
+                    this.RaisePropertyChanged("nom_produit_stock");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> quantite_produit {
+            get {
+                return this.quantite_produitField;
+            }
+            set {
+                if ((this.quantite_produitField.Equals(value) != true)) {
+                    this.quantite_produitField = value;
+                    this.RaisePropertyChanged("quantite_produit");
                 }
             }
         }
@@ -1107,10 +1107,10 @@ namespace ClientpharmacieWPF.ServiceReference2 {
         System.Threading.Tasks.Task<ClientpharmacieWPF.ServiceReference2.CompositeType> GetDataUsingDataContractAsync(ClientpharmacieWPF.ServiceReference2.CompositeType composite);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ajouterclients", ReplyAction="http://tempuri.org/IService1/ajouterclientsResponse")]
-        string ajouterclients(string nom, string prenom, string email, string pass);
+        string ajouterclients(ClientpharmacieWPF.ServiceReference2.Client client);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ajouterclients", ReplyAction="http://tempuri.org/IService1/ajouterclientsResponse")]
-        System.Threading.Tasks.Task<string> ajouterclientsAsync(string nom, string prenom, string email, string pass);
+        System.Threading.Tasks.Task<string> ajouterclientsAsync(ClientpharmacieWPF.ServiceReference2.Client client);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/verifierClients", ReplyAction="http://tempuri.org/IService1/verifierClientsResponse")]
         bool verifierClients(string email, string pass);
@@ -1198,12 +1198,12 @@ namespace ClientpharmacieWPF.ServiceReference2 {
             return base.Channel.GetDataUsingDataContractAsync(composite);
         }
         
-        public string ajouterclients(string nom, string prenom, string email, string pass) {
-            return base.Channel.ajouterclients(nom, prenom, email, pass);
+        public string ajouterclients(ClientpharmacieWPF.ServiceReference2.Client client) {
+            return base.Channel.ajouterclients(client);
         }
         
-        public System.Threading.Tasks.Task<string> ajouterclientsAsync(string nom, string prenom, string email, string pass) {
-            return base.Channel.ajouterclientsAsync(nom, prenom, email, pass);
+        public System.Threading.Tasks.Task<string> ajouterclientsAsync(ClientpharmacieWPF.ServiceReference2.Client client) {
+            return base.Channel.ajouterclientsAsync(client);
         }
         
         public bool verifierClients(string email, string pass) {

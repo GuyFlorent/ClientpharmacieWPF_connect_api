@@ -19,7 +19,7 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel Orientation="Horizontal" Margin="30" Grid.Row="0">
-                    <Image Source="/../Image/logoPharmacie.png" Width="145" Height="80" VerticalAlignment="Center" Margin="0,-20,0,0"/>
+                    <Image Source="C:\Users\wangu\Source\Repos\GuyFlorent\ClientpharmacieWPF_connect_api\Image\logoPharmacie.png" Width="145" Height="80" VerticalAlignment="Center" Margin="0,-20,0,0"/>
                     <TextBlock Text="PHARMACIE ETHODET" VerticalAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="#FFFBE188"/>
                 </StackPanel>
                 <StackPanel Grid.Row="1" HorizontalAlignment="Stretch" Margin="20">

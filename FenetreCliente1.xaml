@@ -111,10 +111,10 @@
                                 <TextBox x:Name="txtquantite_cmd"></TextBox>
                             </StackPanel>
                             <StackPanel Grid.Row="0" Grid.Column="4">
-                                <TextBlock Text="Prix total"></TextBlock>
+                                <TextBlock Text="Prix à l'unité"></TextBlock>
                             </StackPanel>
                             <StackPanel Grid.Row="1" Grid.Column="4">
-                                <TextBox></TextBox>
+                                <TextBlock x:Name="tb_prix_unité"></TextBlock>
                                 <StackPanel Grid.Row="2" Grid.Column="0">
                                     <Button Content="valider" Click="Button_Click_1" />
                                 </StackPanel>

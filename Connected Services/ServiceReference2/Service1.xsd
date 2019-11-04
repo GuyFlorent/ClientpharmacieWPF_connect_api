@@ -7,22 +7,35 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CompositeType" nillable="true" type="tns:CompositeType" />
-  <xs:complexType name="ArrayOfProduitReturn">
+  <xs:complexType name="Client">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProduitReturn" nillable="true" type="tns:ProduitReturn" />
+      <xs:element minOccurs="0" name="Commandes" nillable="true" type="tns:ArrayOfCommande" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_client" type="xs:int" />
+      <xs:element minOccurs="0" name="nom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prenom" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfProduitReturn" nillable="true" type="tns:ArrayOfProduitReturn" />
-  <xs:complexType name="ProduitReturn">
+  <xs:element name="Client" nillable="true" type="tns:Client" />
+  <xs:complexType name="ArrayOfCommande">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Commande" nillable="true" type="tns:Commande" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCommande" nillable="true" type="tns:ArrayOfCommande" />
+  <xs:complexType name="Commande">
     <xs:sequence>
       <xs:element minOccurs="0" name="Achats" nillable="true" type="tns:ArrayOfAchat" />
-      <xs:element minOccurs="0" name="Produits" nillable="true" type="tns:ArrayOfProduit" />
-      <xs:element minOccurs="0" name="id_stock" type="xs:int" />
-      <xs:element minOccurs="0" name="nom_produit_stock" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="quantite_produit" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Client" nillable="true" type="tns:Client" />
+      <xs:element minOccurs="0" name="heure_commande" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_client" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="id_commande" type="xs:int" />
+      <xs:element minOccurs="0" name="statut_commande" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="statut_livraison" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ProduitReturn" nillable="true" type="tns:ProduitReturn" />
+  <xs:element name="Commande" nillable="true" type="tns:Commande" />
   <xs:complexType name="ArrayOfAchat">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Achat" nillable="true" type="tns:Achat" />
@@ -41,35 +54,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Achat" nillable="true" type="tns:Achat" />
-  <xs:complexType name="Commande">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Achats" nillable="true" type="tns:ArrayOfAchat" />
-      <xs:element minOccurs="0" name="Client" nillable="true" type="tns:Client" />
-      <xs:element minOccurs="0" name="heure_commande" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="id_client" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="id_commande" type="xs:int" />
-      <xs:element minOccurs="0" name="statut_commande" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="statut_livraison" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Commande" nillable="true" type="tns:Commande" />
-  <xs:complexType name="Client">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Commandes" nillable="true" type="tns:ArrayOfCommande" />
-      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="id_client" type="xs:int" />
-      <xs:element minOccurs="0" name="nom" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="prenom" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Client" nillable="true" type="tns:Client" />
-  <xs:complexType name="ArrayOfCommande">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Commande" nillable="true" type="tns:Commande" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfCommande" nillable="true" type="tns:ArrayOfCommande" />
   <xs:complexType name="Stock">
     <xs:sequence>
       <xs:element minOccurs="0" name="Achats" nillable="true" type="tns:ArrayOfAchat" />
@@ -98,6 +82,22 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Produit" nillable="true" type="tns:Produit" />
+  <xs:complexType name="ArrayOfProduitReturn">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProduitReturn" nillable="true" type="tns:ProduitReturn" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProduitReturn" nillable="true" type="tns:ArrayOfProduitReturn" />
+  <xs:complexType name="ProduitReturn">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Achats" nillable="true" type="tns:ArrayOfAchat" />
+      <xs:element minOccurs="0" name="Produits" nillable="true" type="tns:ArrayOfProduit" />
+      <xs:element minOccurs="0" name="id_stock" type="xs:int" />
+      <xs:element minOccurs="0" name="nom_produit_stock" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="quantite_produit" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProduitReturn" nillable="true" type="tns:ProduitReturn" />
   <xs:complexType name="ClientReturn">
     <xs:sequence>
       <xs:element minOccurs="0" name="Commandes" nillable="true" type="tns:ArrayOfCommande" />

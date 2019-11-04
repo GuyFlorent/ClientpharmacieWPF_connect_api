@@ -22,7 +22,7 @@
                     <RowDefinition Height="auto"></RowDefinition>
                 </Grid.RowDefinitions>
                 <WrapPanel Grid.Row="0">
-                    <Image Source="/Images/logoPharmacie.PNG" Width="30" ></Image>
+                    <Image Source="C:\Users\wangu\Source\Repos\GuyFlorent\ClientpharmacieWPF_connect_api\Image\logoPharmacie.png" Width="30" ></Image>
                     <TextBlock Text="    "></TextBlock>
                     <Label Content="PHARMACIE ETHODET" ></Label>
                 </WrapPanel>

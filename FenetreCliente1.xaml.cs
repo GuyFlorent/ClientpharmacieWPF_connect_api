@@ -91,6 +91,8 @@ namespace ClientpharmacieWPF
             lab_titre.Content = this.client1.nom;
             txtNom.Text = this.client1.nom;
             var listeOrder = svc.getcommandehisto(this.client1).OrderByDescending(f=> f.heureCommand);
+            var prix_textb = listeOrder.FirstOrDefault(s => s.nom_Produit == listeBoxProduit.SelectedItem.ToString());
+            tb_prix_unité.Text = prix_textb.prix_Produit_Unite.ToString();
 
             maListeBox.DataContext = listeOrder;
             
