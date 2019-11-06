@@ -59,6 +59,7 @@
       <xs:element minOccurs="0" name="Achats" nillable="true" type="tns:ArrayOfAchat" />
       <xs:element minOccurs="0" name="Produits" nillable="true" type="tns:ArrayOfProduit" />
       <xs:element minOccurs="0" name="id_stock" type="xs:int" />
+      <xs:element minOccurs="0" name="image_Produit" nillable="true" type="xs:base64Binary" />
       <xs:element minOccurs="0" name="nom_produit_stock" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="quantite_produit" nillable="true" type="xs:int" />
     </xs:sequence>
@@ -93,6 +94,7 @@
       <xs:element minOccurs="0" name="Achats" nillable="true" type="tns:ArrayOfAchat" />
       <xs:element minOccurs="0" name="Produits" nillable="true" type="tns:ArrayOfProduit" />
       <xs:element minOccurs="0" name="id_stock" type="xs:int" />
+      <xs:element minOccurs="0" name="image_Produit" nillable="true" type="xs:base64Binary" />
       <xs:element minOccurs="0" name="nom_produit_stock" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="quantite_produit" nillable="true" type="xs:int" />
     </xs:sequence>
@@ -100,7 +102,8 @@
   <xs:element name="ProduitReturn" nillable="true" type="tns:ProduitReturn" />
   <xs:complexType name="ClientReturn">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Commandes" nillable="true" type="tns:ArrayOfCommande" />
+      <xs:element minOccurs="0" name="Achats" nillable="true" type="tns:ArrayOfAchat" />
+      <xs:element minOccurs="0" name="Produits" nillable="true" type="tns:ArrayOfProduit" />
       <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="id_client" type="xs:int" />
       <xs:element minOccurs="0" name="nom" nillable="true" type="xs:string" />

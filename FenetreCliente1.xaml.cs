@@ -113,6 +113,25 @@ namespace ClientpharmacieWPF
        
         }
 
-      
+        private void listeBoxProduit_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var listeStock = svc.listeProduit();
+            try
+            {
+                var img = listeStock[listeBoxProduit.SelectedIndex].image_Produit;//recuperer image produit
+                Stream StreamObj = new MemoryStream(img); //code permettant de recuperer l'image de la base de donnée
+
+                BitmapImage BitObj = new BitmapImage();
+
+                BitObj.BeginInit();
+
+                BitObj.StreamSource = StreamObj;
+
+                BitObj.EndInit();
+
+                mon_image.Source = BitObj;
+            }
+            catch (Exception) { }
+        }
     }
 }

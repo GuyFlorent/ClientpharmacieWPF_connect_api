@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ClientpharmacieWPF.ServiceReference1 {
+namespace ClientpharmacieWPF.ServiceReference3 {
     using System.Runtime.Serialization;
     using System;
     
@@ -84,7 +84,7 @@ namespace ClientpharmacieWPF.ServiceReference1 {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientpharmacieWPF.ServiceReference1.Commande[] CommandesField;
+        private ClientpharmacieWPF.ServiceReference3.Commande[] CommandesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string emailField;
@@ -112,7 +112,7 @@ namespace ClientpharmacieWPF.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientpharmacieWPF.ServiceReference1.Commande[] Commandes {
+        public ClientpharmacieWPF.ServiceReference3.Commande[] Commandes {
             get {
                 return this.CommandesField;
             }
@@ -209,10 +209,10 @@ namespace ClientpharmacieWPF.ServiceReference1 {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientpharmacieWPF.ServiceReference1.Achat[] AchatsField;
+        private ClientpharmacieWPF.ServiceReference3.Achat[] AchatsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientpharmacieWPF.ServiceReference1.Client ClientField;
+        private ClientpharmacieWPF.ServiceReference3.Client ClientField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string heure_commandeField;
@@ -240,7 +240,7 @@ namespace ClientpharmacieWPF.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientpharmacieWPF.ServiceReference1.Achat[] Achats {
+        public ClientpharmacieWPF.ServiceReference3.Achat[] Achats {
             get {
                 return this.AchatsField;
             }
@@ -253,7 +253,7 @@ namespace ClientpharmacieWPF.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientpharmacieWPF.ServiceReference1.Client Client {
+        public ClientpharmacieWPF.ServiceReference3.Client Client {
             get {
                 return this.ClientField;
             }
@@ -350,10 +350,10 @@ namespace ClientpharmacieWPF.ServiceReference1 {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientpharmacieWPF.ServiceReference1.Commande CommandeField;
+        private ClientpharmacieWPF.ServiceReference3.Commande CommandeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientpharmacieWPF.ServiceReference1.Stock StockField;
+        private ClientpharmacieWPF.ServiceReference3.Stock StockField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int id_achatField;
@@ -381,7 +381,7 @@ namespace ClientpharmacieWPF.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientpharmacieWPF.ServiceReference1.Commande Commande {
+        public ClientpharmacieWPF.ServiceReference3.Commande Commande {
             get {
                 return this.CommandeField;
             }
@@ -394,7 +394,7 @@ namespace ClientpharmacieWPF.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientpharmacieWPF.ServiceReference1.Stock Stock {
+        public ClientpharmacieWPF.ServiceReference3.Stock Stock {
             get {
                 return this.StockField;
             }
@@ -491,10 +491,10 @@ namespace ClientpharmacieWPF.ServiceReference1 {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientpharmacieWPF.ServiceReference1.Achat[] AchatsField;
+        private ClientpharmacieWPF.ServiceReference3.Achat[] AchatsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientpharmacieWPF.ServiceReference1.Produit[] ProduitsField;
+        private ClientpharmacieWPF.ServiceReference3.Produit[] ProduitsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int id_stockField;
@@ -519,7 +519,7 @@ namespace ClientpharmacieWPF.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientpharmacieWPF.ServiceReference1.Achat[] Achats {
+        public ClientpharmacieWPF.ServiceReference3.Achat[] Achats {
             get {
                 return this.AchatsField;
             }
@@ -532,7 +532,7 @@ namespace ClientpharmacieWPF.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientpharmacieWPF.ServiceReference1.Produit[] Produits {
+        public ClientpharmacieWPF.ServiceReference3.Produit[] Produits {
             get {
                 return this.ProduitsField;
             }
@@ -616,7 +616,7 @@ namespace ClientpharmacieWPF.ServiceReference1 {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientpharmacieWPF.ServiceReference1.Stock StockField;
+        private ClientpharmacieWPF.ServiceReference3.Stock StockField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string date_heure_ajout_produitField;
@@ -647,7 +647,7 @@ namespace ClientpharmacieWPF.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientpharmacieWPF.ServiceReference1.Stock Stock {
+        public ClientpharmacieWPF.ServiceReference3.Stock Stock {
             get {
                 return this.StockField;
             }
@@ -757,10 +757,10 @@ namespace ClientpharmacieWPF.ServiceReference1 {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientpharmacieWPF.ServiceReference1.Achat[] AchatsField;
+        private ClientpharmacieWPF.ServiceReference3.Achat[] AchatsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientpharmacieWPF.ServiceReference1.Produit[] ProduitsField;
+        private ClientpharmacieWPF.ServiceReference3.Produit[] ProduitsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int id_stockField;
@@ -785,7 +785,7 @@ namespace ClientpharmacieWPF.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientpharmacieWPF.ServiceReference1.Achat[] Achats {
+        public ClientpharmacieWPF.ServiceReference3.Achat[] Achats {
             get {
                 return this.AchatsField;
             }
@@ -798,7 +798,7 @@ namespace ClientpharmacieWPF.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientpharmacieWPF.ServiceReference1.Produit[] Produits {
+        public ClientpharmacieWPF.ServiceReference3.Produit[] Produits {
             get {
                 return this.ProduitsField;
             }
@@ -882,10 +882,10 @@ namespace ClientpharmacieWPF.ServiceReference1 {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientpharmacieWPF.ServiceReference1.Achat[] AchatsField;
+        private ClientpharmacieWPF.ServiceReference3.Achat[] AchatsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientpharmacieWPF.ServiceReference1.Produit[] ProduitsField;
+        private ClientpharmacieWPF.ServiceReference3.Produit[] ProduitsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string emailField;
@@ -913,7 +913,7 @@ namespace ClientpharmacieWPF.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientpharmacieWPF.ServiceReference1.Achat[] Achats {
+        public ClientpharmacieWPF.ServiceReference3.Achat[] Achats {
             get {
                 return this.AchatsField;
             }
@@ -926,7 +926,7 @@ namespace ClientpharmacieWPF.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientpharmacieWPF.ServiceReference1.Produit[] Produits {
+        public ClientpharmacieWPF.ServiceReference3.Produit[] Produits {
             get {
                 return this.ProduitsField;
             }
@@ -1139,7 +1139,7 @@ namespace ClientpharmacieWPF.ServiceReference1 {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference3.IService1")]
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
@@ -1149,16 +1149,16 @@ namespace ClientpharmacieWPF.ServiceReference1 {
         System.Threading.Tasks.Task<string> GetDataAsync(int value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
-        ClientpharmacieWPF.ServiceReference1.CompositeType GetDataUsingDataContract(ClientpharmacieWPF.ServiceReference1.CompositeType composite);
+        ClientpharmacieWPF.ServiceReference3.CompositeType GetDataUsingDataContract(ClientpharmacieWPF.ServiceReference3.CompositeType composite);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
-        System.Threading.Tasks.Task<ClientpharmacieWPF.ServiceReference1.CompositeType> GetDataUsingDataContractAsync(ClientpharmacieWPF.ServiceReference1.CompositeType composite);
+        System.Threading.Tasks.Task<ClientpharmacieWPF.ServiceReference3.CompositeType> GetDataUsingDataContractAsync(ClientpharmacieWPF.ServiceReference3.CompositeType composite);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ajouterclients", ReplyAction="http://tempuri.org/IService1/ajouterclientsResponse")]
-        string ajouterclients(ClientpharmacieWPF.ServiceReference1.Client client);
+        string ajouterclients(ClientpharmacieWPF.ServiceReference3.Client client);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ajouterclients", ReplyAction="http://tempuri.org/IService1/ajouterclientsResponse")]
-        System.Threading.Tasks.Task<string> ajouterclientsAsync(ClientpharmacieWPF.ServiceReference1.Client client);
+        System.Threading.Tasks.Task<string> ajouterclientsAsync(ClientpharmacieWPF.ServiceReference3.Client client);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/verifierClients", ReplyAction="http://tempuri.org/IService1/verifierClientsResponse")]
         bool verifierClients(string email, string pass);
@@ -1167,10 +1167,10 @@ namespace ClientpharmacieWPF.ServiceReference1 {
         System.Threading.Tasks.Task<bool> verifierClientsAsync(string email, string pass);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/listeProduit", ReplyAction="http://tempuri.org/IService1/listeProduitResponse")]
-        ClientpharmacieWPF.ServiceReference1.ProduitReturn[] listeProduit();
+        ClientpharmacieWPF.ServiceReference3.ProduitReturn[] listeProduit();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/listeProduit", ReplyAction="http://tempuri.org/IService1/listeProduitResponse")]
-        System.Threading.Tasks.Task<ClientpharmacieWPF.ServiceReference1.ProduitReturn[]> listeProduitAsync();
+        System.Threading.Tasks.Task<ClientpharmacieWPF.ServiceReference3.ProduitReturn[]> listeProduitAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/passerCommande", ReplyAction="http://tempuri.org/IService1/passerCommandeResponse")]
         string passerCommande(string nomclient, string nomproduit, int quantité);
@@ -1179,37 +1179,37 @@ namespace ClientpharmacieWPF.ServiceReference1 {
         System.Threading.Tasks.Task<string> passerCommandeAsync(string nomclient, string nomproduit, int quantité);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/recupereParEmail", ReplyAction="http://tempuri.org/IService1/recupereParEmailResponse")]
-        ClientpharmacieWPF.ServiceReference1.ClientReturn recupereParEmail(string email);
+        ClientpharmacieWPF.ServiceReference3.ClientReturn recupereParEmail(string email);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/recupereParEmail", ReplyAction="http://tempuri.org/IService1/recupereParEmailResponse")]
-        System.Threading.Tasks.Task<ClientpharmacieWPF.ServiceReference1.ClientReturn> recupereParEmailAsync(string email);
+        System.Threading.Tasks.Task<ClientpharmacieWPF.ServiceReference3.ClientReturn> recupereParEmailAsync(string email);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/modifierClients", ReplyAction="http://tempuri.org/IService1/modifierClientsResponse")]
-        string modifierClients(ClientpharmacieWPF.ServiceReference1.ClientReturn client);
+        string modifierClients(ClientpharmacieWPF.ServiceReference3.ClientReturn client);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/modifierClients", ReplyAction="http://tempuri.org/IService1/modifierClientsResponse")]
-        System.Threading.Tasks.Task<string> modifierClientsAsync(ClientpharmacieWPF.ServiceReference1.ClientReturn client);
+        System.Threading.Tasks.Task<string> modifierClientsAsync(ClientpharmacieWPF.ServiceReference3.ClientReturn client);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/supprimerClients", ReplyAction="http://tempuri.org/IService1/supprimerClientsResponse")]
-        string supprimerClients(ClientpharmacieWPF.ServiceReference1.ClientReturn client);
+        string supprimerClients(ClientpharmacieWPF.ServiceReference3.ClientReturn client);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/supprimerClients", ReplyAction="http://tempuri.org/IService1/supprimerClientsResponse")]
-        System.Threading.Tasks.Task<string> supprimerClientsAsync(ClientpharmacieWPF.ServiceReference1.ClientReturn client);
+        System.Threading.Tasks.Task<string> supprimerClientsAsync(ClientpharmacieWPF.ServiceReference3.ClientReturn client);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getcommandehisto", ReplyAction="http://tempuri.org/IService1/getcommandehistoResponse")]
-        ClientpharmacieWPF.ServiceReference1.orderHisto[] getcommandehisto(ClientpharmacieWPF.ServiceReference1.ClientReturn client);
+        ClientpharmacieWPF.ServiceReference3.orderHisto[] getcommandehisto(ClientpharmacieWPF.ServiceReference3.ClientReturn client);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getcommandehisto", ReplyAction="http://tempuri.org/IService1/getcommandehistoResponse")]
-        System.Threading.Tasks.Task<ClientpharmacieWPF.ServiceReference1.orderHisto[]> getcommandehistoAsync(ClientpharmacieWPF.ServiceReference1.ClientReturn client);
+        System.Threading.Tasks.Task<ClientpharmacieWPF.ServiceReference3.orderHisto[]> getcommandehistoAsync(ClientpharmacieWPF.ServiceReference3.ClientReturn client);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IService1Channel : ClientpharmacieWPF.ServiceReference1.IService1, System.ServiceModel.IClientChannel {
+    public interface IService1Channel : ClientpharmacieWPF.ServiceReference3.IService1, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Service1Client : System.ServiceModel.ClientBase<ClientpharmacieWPF.ServiceReference1.IService1>, ClientpharmacieWPF.ServiceReference1.IService1 {
+    public partial class Service1Client : System.ServiceModel.ClientBase<ClientpharmacieWPF.ServiceReference3.IService1>, ClientpharmacieWPF.ServiceReference3.IService1 {
         
         public Service1Client() {
         }
@@ -1238,19 +1238,19 @@ namespace ClientpharmacieWPF.ServiceReference1 {
             return base.Channel.GetDataAsync(value);
         }
         
-        public ClientpharmacieWPF.ServiceReference1.CompositeType GetDataUsingDataContract(ClientpharmacieWPF.ServiceReference1.CompositeType composite) {
+        public ClientpharmacieWPF.ServiceReference3.CompositeType GetDataUsingDataContract(ClientpharmacieWPF.ServiceReference3.CompositeType composite) {
             return base.Channel.GetDataUsingDataContract(composite);
         }
         
-        public System.Threading.Tasks.Task<ClientpharmacieWPF.ServiceReference1.CompositeType> GetDataUsingDataContractAsync(ClientpharmacieWPF.ServiceReference1.CompositeType composite) {
+        public System.Threading.Tasks.Task<ClientpharmacieWPF.ServiceReference3.CompositeType> GetDataUsingDataContractAsync(ClientpharmacieWPF.ServiceReference3.CompositeType composite) {
             return base.Channel.GetDataUsingDataContractAsync(composite);
         }
         
-        public string ajouterclients(ClientpharmacieWPF.ServiceReference1.Client client) {
+        public string ajouterclients(ClientpharmacieWPF.ServiceReference3.Client client) {
             return base.Channel.ajouterclients(client);
         }
         
-        public System.Threading.Tasks.Task<string> ajouterclientsAsync(ClientpharmacieWPF.ServiceReference1.Client client) {
+        public System.Threading.Tasks.Task<string> ajouterclientsAsync(ClientpharmacieWPF.ServiceReference3.Client client) {
             return base.Channel.ajouterclientsAsync(client);
         }
         
@@ -1262,11 +1262,11 @@ namespace ClientpharmacieWPF.ServiceReference1 {
             return base.Channel.verifierClientsAsync(email, pass);
         }
         
-        public ClientpharmacieWPF.ServiceReference1.ProduitReturn[] listeProduit() {
+        public ClientpharmacieWPF.ServiceReference3.ProduitReturn[] listeProduit() {
             return base.Channel.listeProduit();
         }
         
-        public System.Threading.Tasks.Task<ClientpharmacieWPF.ServiceReference1.ProduitReturn[]> listeProduitAsync() {
+        public System.Threading.Tasks.Task<ClientpharmacieWPF.ServiceReference3.ProduitReturn[]> listeProduitAsync() {
             return base.Channel.listeProduitAsync();
         }
         
@@ -1278,35 +1278,35 @@ namespace ClientpharmacieWPF.ServiceReference1 {
             return base.Channel.passerCommandeAsync(nomclient, nomproduit, quantité);
         }
         
-        public ClientpharmacieWPF.ServiceReference1.ClientReturn recupereParEmail(string email) {
+        public ClientpharmacieWPF.ServiceReference3.ClientReturn recupereParEmail(string email) {
             return base.Channel.recupereParEmail(email);
         }
         
-        public System.Threading.Tasks.Task<ClientpharmacieWPF.ServiceReference1.ClientReturn> recupereParEmailAsync(string email) {
+        public System.Threading.Tasks.Task<ClientpharmacieWPF.ServiceReference3.ClientReturn> recupereParEmailAsync(string email) {
             return base.Channel.recupereParEmailAsync(email);
         }
         
-        public string modifierClients(ClientpharmacieWPF.ServiceReference1.ClientReturn client) {
+        public string modifierClients(ClientpharmacieWPF.ServiceReference3.ClientReturn client) {
             return base.Channel.modifierClients(client);
         }
         
-        public System.Threading.Tasks.Task<string> modifierClientsAsync(ClientpharmacieWPF.ServiceReference1.ClientReturn client) {
+        public System.Threading.Tasks.Task<string> modifierClientsAsync(ClientpharmacieWPF.ServiceReference3.ClientReturn client) {
             return base.Channel.modifierClientsAsync(client);
         }
         
-        public string supprimerClients(ClientpharmacieWPF.ServiceReference1.ClientReturn client) {
+        public string supprimerClients(ClientpharmacieWPF.ServiceReference3.ClientReturn client) {
             return base.Channel.supprimerClients(client);
         }
         
-        public System.Threading.Tasks.Task<string> supprimerClientsAsync(ClientpharmacieWPF.ServiceReference1.ClientReturn client) {
+        public System.Threading.Tasks.Task<string> supprimerClientsAsync(ClientpharmacieWPF.ServiceReference3.ClientReturn client) {
             return base.Channel.supprimerClientsAsync(client);
         }
         
-        public ClientpharmacieWPF.ServiceReference1.orderHisto[] getcommandehisto(ClientpharmacieWPF.ServiceReference1.ClientReturn client) {
+        public ClientpharmacieWPF.ServiceReference3.orderHisto[] getcommandehisto(ClientpharmacieWPF.ServiceReference3.ClientReturn client) {
             return base.Channel.getcommandehisto(client);
         }
         
-        public System.Threading.Tasks.Task<ClientpharmacieWPF.ServiceReference1.orderHisto[]> getcommandehistoAsync(ClientpharmacieWPF.ServiceReference1.ClientReturn client) {
+        public System.Threading.Tasks.Task<ClientpharmacieWPF.ServiceReference3.orderHisto[]> getcommandehistoAsync(ClientpharmacieWPF.ServiceReference3.ClientReturn client) {
             return base.Channel.getcommandehistoAsync(client);
         }
     }

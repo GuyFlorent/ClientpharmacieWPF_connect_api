@@ -500,6 +500,9 @@ namespace ClientpharmacieWPF.ServiceReference2 {
         private int id_stockField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] image_ProduitField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string nom_produit_stockField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -550,6 +553,19 @@ namespace ClientpharmacieWPF.ServiceReference2 {
                 if ((this.id_stockField.Equals(value) != true)) {
                     this.id_stockField = value;
                     this.RaisePropertyChanged("id_stock");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] image_Produit {
+            get {
+                return this.image_ProduitField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.image_ProduitField, value) != true)) {
+                    this.image_ProduitField = value;
+                    this.RaisePropertyChanged("image_Produit");
                 }
             }
         }
@@ -750,6 +766,9 @@ namespace ClientpharmacieWPF.ServiceReference2 {
         private int id_stockField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] image_ProduitField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string nom_produit_stockField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -805,6 +824,19 @@ namespace ClientpharmacieWPF.ServiceReference2 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] image_Produit {
+            get {
+                return this.image_ProduitField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.image_ProduitField, value) != true)) {
+                    this.image_ProduitField = value;
+                    this.RaisePropertyChanged("image_Produit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string nom_produit_stock {
             get {
                 return this.nom_produit_stockField;
@@ -850,7 +882,10 @@ namespace ClientpharmacieWPF.ServiceReference2 {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientpharmacieWPF.ServiceReference2.Commande[] CommandesField;
+        private ClientpharmacieWPF.ServiceReference2.Achat[] AchatsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ClientpharmacieWPF.ServiceReference2.Produit[] ProduitsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string emailField;
@@ -878,14 +913,27 @@ namespace ClientpharmacieWPF.ServiceReference2 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientpharmacieWPF.ServiceReference2.Commande[] Commandes {
+        public ClientpharmacieWPF.ServiceReference2.Achat[] Achats {
             get {
-                return this.CommandesField;
+                return this.AchatsField;
             }
             set {
-                if ((object.ReferenceEquals(this.CommandesField, value) != true)) {
-                    this.CommandesField = value;
-                    this.RaisePropertyChanged("Commandes");
+                if ((object.ReferenceEquals(this.AchatsField, value) != true)) {
+                    this.AchatsField = value;
+                    this.RaisePropertyChanged("Achats");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ClientpharmacieWPF.ServiceReference2.Produit[] Produits {
+            get {
+                return this.ProduitsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProduitsField, value) != true)) {
+                    this.ProduitsField = value;
+                    this.RaisePropertyChanged("Produits");
                 }
             }
         }
