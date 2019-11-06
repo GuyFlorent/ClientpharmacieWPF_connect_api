@@ -129,7 +129,7 @@
                     <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
                        
                             <StackPanel>
-                            <Image x:Name="mon_image" Width="300" Height="200" HorizontalAlignment="Left"></Image>
+                            <Image x:Name="mon_image" Width="350" Height="300" HorizontalAlignment="Left"></Image>
                                 
                         <ListBox x:Name="maListeBox" ItemsSource="{Binding}" Height="100" ScrollViewer.VerticalScrollBarVisibility="Visible" >
                             <ListBox.ItemTemplate>

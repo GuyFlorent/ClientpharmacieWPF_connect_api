@@ -503,6 +503,9 @@ namespace ClientpharmacieWPF.ServiceReference2 {
         private byte[] image_ProduitField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string image_testField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string nom_produit_stockField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -566,6 +569,19 @@ namespace ClientpharmacieWPF.ServiceReference2 {
                 if ((object.ReferenceEquals(this.image_ProduitField, value) != true)) {
                     this.image_ProduitField = value;
                     this.RaisePropertyChanged("image_Produit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string image_test {
+            get {
+                return this.image_testField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.image_testField, value) != true)) {
+                    this.image_testField = value;
+                    this.RaisePropertyChanged("image_test");
                 }
             }
         }
@@ -769,6 +785,9 @@ namespace ClientpharmacieWPF.ServiceReference2 {
         private byte[] image_ProduitField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string image_testField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string nom_produit_stockField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -832,6 +851,19 @@ namespace ClientpharmacieWPF.ServiceReference2 {
                 if ((object.ReferenceEquals(this.image_ProduitField, value) != true)) {
                     this.image_ProduitField = value;
                     this.RaisePropertyChanged("image_Produit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string image_test {
+            get {
+                return this.image_testField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.image_testField, value) != true)) {
+                    this.image_testField = value;
+                    this.RaisePropertyChanged("image_test");
                 }
             }
         }
