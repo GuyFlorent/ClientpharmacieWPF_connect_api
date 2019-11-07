@@ -131,4 +131,17 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="orderHisto" nillable="true" type="tns:orderHisto" />
+  <xs:complexType name="ArrayOfInfoProduit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InfoProduit" nillable="true" type="tns:InfoProduit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInfoProduit" nillable="true" type="tns:ArrayOfInfoProduit" />
+  <xs:complexType name="InfoProduit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nom_produit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prix_unite" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InfoProduit" nillable="true" type="tns:InfoProduit" />
 </xs:schema>

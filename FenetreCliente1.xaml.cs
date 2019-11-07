@@ -28,7 +28,8 @@ namespace ClientpharmacieWPF
     {
         Service1Client svc = new Service1Client();
         List<ProduitReturn> listeStock;
-        List<orderHisto> listeOrder;
+        List<orderHisto> listeOrdere;
+        public double prixUnite;
 
         public ClientReturn client1;
         public FenetreCliente1(ClientReturn cli)
@@ -92,6 +93,9 @@ namespace ClientpharmacieWPF
             txtNom.Text = this.client1.nom;
             var listeOrder = svc.getcommandehisto(this.client1).OrderByDescending(f=> f.heureCommand);
             var prix_textb = listeOrder.FirstOrDefault(s => s.nom_Produit == listeBoxProduit.SelectedItem.ToString());
+
+           
+
           //  tb_prix_unité.Text = prix_textb.prix_Produit_Unite.ToString();
 
             maListeBox.DataContext = listeOrder;
@@ -122,6 +126,17 @@ namespace ClientpharmacieWPF
               {
                   var img = listeStock[listeBoxProduit.SelectedIndex].image_test;//recuperer image produit
                 mon_image.Source = (ImageSource)new ImageSourceConverter().ConvertFromString(img);
+
+                lab_Quantite_restante.Text = (listeStock[listeBoxProduit.SelectedIndex].quantite_produit).ToString() + " pièces";
+
+                //achiffage le prix a l'unité en  bas de l'image
+
+
+
+                var nom = listeStock[listeBoxProduit.SelectedIndex].nom_produit_stock; //recupration du nom du produit selectionné
+
+                txt_prix_unite.Text = svc.infoProduits().FirstOrDefault(f => f.nom_produit == nom).prix_unite.ToString() + " €";
+
                 /* Stream StreamObj = new MemoryStream(img); //code permettant de recuperer l'image de la base de donnée
 
                   BitmapImage BitObj = new BitmapImage();

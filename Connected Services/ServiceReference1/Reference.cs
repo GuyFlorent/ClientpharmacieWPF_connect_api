@@ -1170,6 +1170,67 @@ namespace ClientpharmacieWPF.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InfoProduit", Namespace="http://schemas.datacontract.org/2004/07/Wcf_Pharmacie")]
+    [System.SerializableAttribute()]
+    public partial class InfoProduit : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string nom_produitField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> prix_uniteField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string nom_produit {
+            get {
+                return this.nom_produitField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.nom_produitField, value) != true)) {
+                    this.nom_produitField = value;
+                    this.RaisePropertyChanged("nom_produit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> prix_unite {
+            get {
+                return this.prix_uniteField;
+            }
+            set {
+                if ((this.prix_uniteField.Equals(value) != true)) {
+                    this.prix_uniteField = value;
+                    this.RaisePropertyChanged("prix_unite");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
@@ -1233,6 +1294,12 @@ namespace ClientpharmacieWPF.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getcommandehisto", ReplyAction="http://tempuri.org/IService1/getcommandehistoResponse")]
         System.Threading.Tasks.Task<ClientpharmacieWPF.ServiceReference1.orderHisto[]> getcommandehistoAsync(ClientpharmacieWPF.ServiceReference1.ClientReturn client);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/infoProduits", ReplyAction="http://tempuri.org/IService1/infoProduitsResponse")]
+        ClientpharmacieWPF.ServiceReference1.InfoProduit[] infoProduits();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/infoProduits", ReplyAction="http://tempuri.org/IService1/infoProduitsResponse")]
+        System.Threading.Tasks.Task<ClientpharmacieWPF.ServiceReference1.InfoProduit[]> infoProduitsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1340,6 +1407,14 @@ namespace ClientpharmacieWPF.ServiceReference1 {
         
         public System.Threading.Tasks.Task<ClientpharmacieWPF.ServiceReference1.orderHisto[]> getcommandehistoAsync(ClientpharmacieWPF.ServiceReference1.ClientReturn client) {
             return base.Channel.getcommandehistoAsync(client);
+        }
+        
+        public ClientpharmacieWPF.ServiceReference1.InfoProduit[] infoProduits() {
+            return base.Channel.infoProduits();
+        }
+        
+        public System.Threading.Tasks.Task<ClientpharmacieWPF.ServiceReference1.InfoProduit[]> infoProduitsAsync() {
+            return base.Channel.infoProduitsAsync();
         }
     }
 }

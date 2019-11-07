@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClientpharmacieWPF"
         mc:Ignorable="d"
-        Title="FenetreCliente1" Height="450" Width="800">
+        Title="FenetreCliente1" Height="577.601" Width="800">
     <DockPanel Background="Beige">
         <StackPanel DockPanel.Dock="top">
             <Label x:Name="lab_titre"  Foreground="DarkMagenta"></Label>
@@ -96,7 +96,7 @@
                                 <TextBlock Text="Nom du client"></TextBlock>
                             </StackPanel>
                             <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
-                                <TextBlock  Name="lab_nomClient"></TextBlock>
+                                <TextBlock FontSize="10" Name="lab_nomClient"></TextBlock>
                             </StackPanel>
                             <StackPanel Grid.Row="0" Grid.Column="2">
                                 <TextBlock Text="liste des Produits"></TextBlock>
@@ -130,8 +130,16 @@
                        
                             <StackPanel>
                             <Image x:Name="mon_image" Width="350" Height="300" HorizontalAlignment="Left"></Image>
+                            <WrapPanel>
+                                <TextBlock FontSize="20" Text="Prix à l'unité : "></TextBlock>
+                                <TextBlock FontSize="20" Foreground="LightPink" x:Name="txt_prix_unite"></TextBlock>
+                            </WrapPanel>
+                            <WrapPanel>
+                                <TextBlock FontSize="20"  Text="Quantité restante : "></TextBlock>
+                                <TextBlock FontSize="20" Foreground="DarkOrange" x:Name="lab_Quantite_restante"></TextBlock>
+                            </WrapPanel>
                                 
-                        <ListBox x:Name="maListeBox" ItemsSource="{Binding}" Height="100" ScrollViewer.VerticalScrollBarVisibility="Visible" >
+                        <ListBox x:Name="maListeBox" ItemsSource="{Binding}" Height="200" ScrollViewer.VerticalScrollBarVisibility="Visible" >
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
                                        
