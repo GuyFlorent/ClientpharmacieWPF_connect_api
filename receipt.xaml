@@ -60,7 +60,7 @@
                         <TextBlock Text="SUBTOTAL" Grid.Column="3" FontSize="12" FontWeight="ExtraLight" HorizontalAlignment="Right"/>
                     </Grid>
                     <Rectangle Fill="Black" Height="1" Margin="5 2" Opacity="0.5"/>
-                    <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListView  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                         <ListViewItem>
                             <Grid HorizontalAlignment="Stretch" Margin="2" Width="480">
                                 <Grid.ColumnDefinitions>

@@ -28,7 +28,7 @@ namespace ClientpharmacieWPF
             InitializeComponent();
 
             this.clientReceipt = client1;
-            var Order = svc.getcommandehisto(client1).OrderBy(f => f.heureCommand).FirstOrDefault();
+            var Order = svc.getcommandehisto(client1).OrderByDescending(f => f.heureCommand).FirstOrDefault();
             
             txtnomClient.Text = client1.nom +"  "+client1.prenom;
             txtDateCommande.Text = Order.heureCommand;
@@ -38,6 +38,8 @@ namespace ClientpharmacieWPF
             txtPrix_Total.Text = Order.prix_total.ToString() + " €";
             txt_Total_Price.Text = Order.prix_total.ToString() + " €";
             txt_date_Jour.Text = Order.heureCommand;
+           
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

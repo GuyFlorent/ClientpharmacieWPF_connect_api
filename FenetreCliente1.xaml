@@ -127,7 +127,7 @@
                         </Grid>
                     </StackPanel>
                     <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
-                       
+                        <TextBlock Text=" totottotto"></TextBlock>
                             <StackPanel>
                             <Image x:Name="mon_image" Width="350" Height="300" HorizontalAlignment="Left"></Image>
                             <WrapPanel>
@@ -145,11 +145,17 @@
                                        
                                     <StackPanel Orientation="Horizontal" Grid.Row="1">
                                         <Label Content="- "></Label>
+                                            <Label>Date et heure de commande : </Label>
                                         <Label Content="{Binding heureCommand}" ></Label>
+                                            <Label>Nom du produit : </Label>
                                         <Label Content="{Binding nom_Produit}" ></Label>
+                                            <Label>Prix à l'unitée : </Label>
                                             <Label Content="{Binding prix_Produit_Unite}" ></Label>
+                                            <Label>Quantitée : </Label>
                                             <Label Content="{Binding quantite}"></Label>
+                                            <Label>Prix total : </Label>
                                         <Label Content="{Binding prix_total}"></Label>
+                                            <Label>Statut : </Label>
                                         <Label Content="{Binding statutLivraison}"></Label>
                                     </StackPanel>
                                     

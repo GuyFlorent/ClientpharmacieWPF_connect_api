@@ -46,10 +46,17 @@ namespace ClientpharmacieWPF
             string nomClient = client1.nom;
             string nomProduit = listeBoxProduit.Text;
             string quantite = txtquantite_cmd.Text;
-            svc.passerCommande(nomClient, nomProduit, Convert.ToInt32(quantite));
-            receipt receipt = new receipt(this.client1);
-            receipt.Show();
-            actualliser();
+            var QuantitéStock = svc.listeProduit().FirstOrDefault(f=>f.nom_produit_stock == nomProduit).quantite_produit;
+            if (Convert.ToInt32(quantite) <= QuantitéStock)
+            {
+                svc.passerCommande(nomClient, nomProduit, Convert.ToInt32(quantite));
+                receipt receipt = new receipt(this.client1);
+                receipt.Show();
+                actualliser();
+            }else
+            {
+                MessageBox.Show("La quantité restante est insuffisante car elle est de : " + QuantitéStock.ToString());
+            }
            
         }
 
@@ -136,6 +143,8 @@ namespace ClientpharmacieWPF
                 var nom = listeStock[listeBoxProduit.SelectedIndex].nom_produit_stock; //recupration du nom du produit selectionné
 
                 txt_prix_unite.Text = svc.infoProduits().FirstOrDefault(f => f.nom_produit == nom).prix_unite.ToString() + " €";
+
+             
 
                 /* Stream StreamObj = new MemoryStream(img); //code permettant de recuperer l'image de la base de donnée
 
