@@ -31,7 +31,13 @@ namespace ClientpharmacieWPF
         List<orderHisto> listeOrdere;
         public double prixUnite;
 
+       public List<ProduitPanier> listPanier = new List<ProduitPanier>() ;
+        ProduitPanier panier;
         public ClientReturn client1;
+
+        public string nomPro;
+
+        public decimal TotalPrice;
         public FenetreCliente1(ClientReturn cli)
         {
             InitializeComponent();
@@ -43,17 +49,26 @@ namespace ClientpharmacieWPF
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+
+           
             string nomClient = client1.nom;
             string nomProduit = listeBoxProduit.Text;
             string quantite = txtquantite_cmd.Text;
             var QuantitéStock = svc.listeProduit().FirstOrDefault(f=>f.nom_produit_stock == nomProduit).quantite_produit;
             if (Convert.ToInt32(quantite) <= QuantitéStock)
             {
-                svc.passerCommande(nomClient, nomProduit, Convert.ToInt32(quantite));
-                receipt receipt = new receipt(this.client1);
+                foreach (ProduitPanier p in listPanier)
+                {
+                    svc.passerCommande(nomClient, p.nomProduit, p.quantite);
+
+                }
+                receipt receipt = new receipt(this.client1, TotalPrice, listPanier);
                 receipt.Show();
+                
                 actualliser();
-            }else
+               
+            }
+            else
             {
                 MessageBox.Show("La quantité restante est insuffisante car elle est de : " + QuantitéStock.ToString());
             }
@@ -100,10 +115,10 @@ namespace ClientpharmacieWPF
             txtNom.Text = this.client1.nom;
             var listeOrder = svc.getcommandehisto(this.client1).OrderByDescending(f=> f.heureCommand);
             var prix_textb = listeOrder.FirstOrDefault(s => s.nom_Produit == listeBoxProduit.SelectedItem.ToString());
-
            
 
-          //  tb_prix_unité.Text = prix_textb.prix_Produit_Unite.ToString();
+
+            //  tb_prix_unité.Text = prix_textb.prix_Produit_Unite.ToString();
 
             maListeBox.DataContext = listeOrder;
             
@@ -140,7 +155,8 @@ namespace ClientpharmacieWPF
 
 
 
-                var nom = listeStock[listeBoxProduit.SelectedIndex].nom_produit_stock; //recupration du nom du produit selectionné
+                string nom = listeStock[listeBoxProduit.SelectedIndex].nom_produit_stock; //recupration du nom du produit selectionné
+                nomPro = nom;
 
                 txt_prix_unite.Text = svc.infoProduits().FirstOrDefault(f => f.nom_produit == nom).prix_unite.ToString() + " €";
 
@@ -159,6 +175,20 @@ namespace ClientpharmacieWPF
                   mon_image.Source = BitObj;*/
             }
               catch (Exception) { }
+        }
+
+        private void Tb_prix_unité_Click(object sender, RoutedEventArgs e)
+        {
+            
+            panier = new ProduitPanier();
+            panier.nomProduit = nomPro;
+            panier.quantite = Convert.ToInt32(txtquantite_cmd.Text);
+            panier.prix_unite = (decimal)svc.infoProduits().FirstOrDefault(f => f.nom_produit == nomPro).prix_unite;
+            panier.prix_total = (decimal)svc.infoProduits().FirstOrDefault(f => f.nom_produit == nomPro).prix_unite * Convert.ToInt32(txtquantite_cmd.Text);
+            listPanier.Add(panier);
+            TotalPrice += panier.prix_total;
+            ma_ListView.ItemsSource = listPanier;
+           
         }
     }
 }

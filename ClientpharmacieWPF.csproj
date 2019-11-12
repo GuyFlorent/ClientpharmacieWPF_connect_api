@@ -65,6 +65,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="ProduitPanier.cs" />
     <Compile Include="receipt.xaml.cs">
       <DependentUpon>receipt.xaml</DependentUpon>
     </Compile>

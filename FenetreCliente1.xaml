@@ -69,16 +69,12 @@
                     <TextBlock x:Name="MaCommande" Text="Commande"></TextBlock>
                 </TabItem.Header>
                 <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="16*"/>
-                        <ColumnDefinition Width="377*"/>
-                    </Grid.ColumnDefinitions>
-
-                    <Grid.RowDefinitions>
+                     <Grid.RowDefinitions>
                         <RowDefinition Height="90"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <StackPanel Grid.Row="0" Grid.ColumnSpan="2">
+                    <StackPanel Grid.Row="0" >
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*"></RowDefinition>
@@ -114,22 +110,25 @@
                                 <TextBlock Text="Prix à l'unité"></TextBlock>
                             </StackPanel>
                             <StackPanel Grid.Row="1" Grid.Column="4">
-                                <TextBlock x:Name="tb_prix_unité"></TextBlock>
-                                <StackPanel Grid.Row="2" Grid.Column="0">
-                                    <Button Content="valider" Click="Button_Click_1" />
+                                <Button x:Name="tb_prix_unité" Content="Ajouter dans le panier" Click="Tb_prix_unité_Click"></Button>
+                                <Button Content="Supprimer de la liste"></Button>
                                 </StackPanel>
-                                <StackPanel Grid.Row="2" Grid.Column="0">
-                                    <TextBlock Height="10"></TextBlock>
-                                    
-                                </StackPanel>
-                                <StackPanel Grid.Row="2" Grid.Column="0"/>
+                            <StackPanel Grid.Row="2" Grid.Column="4">
+                                <Button Content="valider la commande" Click="Button_Click_1" />
+                               
                             </StackPanel>
                         </Grid>
                     </StackPanel>
-                    <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
-                        <TextBlock Text=" totottotto"></TextBlock>
-                            <StackPanel>
-                            <Image x:Name="mon_image" Width="350" Height="300" HorizontalAlignment="Left"></Image>
+                    <StackPanel Grid.Row="1" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                       
+                        <StackPanel Grid.Column="0">
+                            <Image x:Name="mon_image" Width="350" Height="150" HorizontalAlignment="Left"></Image>
+
                             <WrapPanel>
                                 <TextBlock FontSize="20" Text="Prix à l'unité : "></TextBlock>
                                 <TextBlock FontSize="20" Foreground="LightPink" x:Name="txt_prix_unite"></TextBlock>
@@ -138,7 +137,26 @@
                                 <TextBlock FontSize="20"  Text="Quantité restante : "></TextBlock>
                                 <TextBlock FontSize="20" Foreground="DarkOrange" x:Name="lab_Quantite_restante"></TextBlock>
                             </WrapPanel>
-                                
+                        </StackPanel>
+                        <StackPanel Grid.Column="1">
+                                <Grid>
+                            <ListView ItemsSource="{Binding}" x:Name="ma_ListView" Height="200"  Width="300">
+                                        <ListView.View>
+                                    <GridView >
+                                        
+                                        <GridViewColumn Header="Nom produit" Width="80" DisplayMemberBinding="{Binding nomProduit}"></GridViewColumn>
+                                        <GridViewColumn Header="Quantité" DisplayMemberBinding="{Binding quantite}"></GridViewColumn>
+                                        <GridViewColumn Header="Prix à l'unité" DisplayMemberBinding="{Binding prix_unite}"></GridViewColumn>
+                                        <GridViewColumn Header="Prix Total" DisplayMemberBinding="{Binding prix_total}"></GridViewColumn>
+                                    </GridView>
+                                        </ListView.View>
+                                    </ListView>
+                                </Grid>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="2">
                         <ListBox x:Name="maListeBox" ItemsSource="{Binding}" Height="200" ScrollViewer.VerticalScrollBarVisibility="Visible" >
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
@@ -164,7 +182,7 @@
                         </ListBox>
                             </StackPanel>
                         
-                    </StackPanel>
+                   
                 </Grid>
             </TabItem>
 

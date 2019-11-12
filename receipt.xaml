@@ -49,61 +49,41 @@
 
                     <Grid Margin="10 30 10 0">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="1*"/>
                             <ColumnDefinition Width="1*"/>
                             <ColumnDefinition Width="1*"/>
                             <ColumnDefinition Width="1*"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="DESCRIPTION" Grid.Column="0" FontSize="12" FontWeight="ExtraLight"/>
-                        <TextBlock Text="RATE" Grid.Column="1" FontSize="12" FontWeight="ExtraLight" HorizontalAlignment="Center"/>
-                        <TextBlock Text="HOURS" Grid.Column="2" FontSize="12" FontWeight="ExtraLight" HorizontalAlignment="Center"/>
-                        <TextBlock Text="SUBTOTAL" Grid.Column="3" FontSize="12" FontWeight="ExtraLight" HorizontalAlignment="Right"/>
+                        <TextBlock Text="Nom du produit" Grid.Column="0" FontSize="12" FontWeight="ExtraLight"/>
+                        <TextBlock Text="Quantité" Grid.Column="1" FontSize="12" FontWeight="ExtraLight" HorizontalAlignment="Left"/>
+                        <TextBlock Text="Prix à l'unité (€)" Grid.Column="2" FontSize="12" FontWeight="ExtraLight" HorizontalAlignment="Left"/>
+                        <TextBlock Text="Prix total (€)" Grid.Column="3" FontSize="12" FontWeight="ExtraLight" HorizontalAlignment="Left"/>
                     </Grid>
                     <Rectangle Fill="Black" Height="1" Margin="5 2" Opacity="0.5"/>
-                    <ListView  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                        <ListViewItem>
-                            <Grid HorizontalAlignment="Stretch" Margin="2" Width="480">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="3*"/>
-                                    <ColumnDefinition Width="1*"/>
-                                    <ColumnDefinition Width="1*"/>
-                                    <ColumnDefinition Width="1*"/>
-                                </Grid.ColumnDefinitions>
-                                <TextBlock x:Name="txt_nomProduit"  Grid.Column="0"/>
-                                <TextBlock x:Name="txt_Prix_Unite"  Grid.Column="1" HorizontalAlignment="Center"/>
-                                <TextBlock x:Name="txtQuantité"  Grid.Column="2" HorizontalAlignment="Center"/>
-                                <TextBlock x:Name="txtPrix_Total"  Grid.Column="3" HorizontalAlignment="Center" Foreground="#FF62013C"/>
-                            </Grid>
-                        </ListViewItem>
-                        <ListViewItem>
-                            <Grid HorizontalAlignment="Stretch" Margin="2" Width="480">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="3*"/>
-                                    <ColumnDefinition Width="1*"/>
-                                    <ColumnDefinition Width="1*"/>
-                                    <ColumnDefinition Width="1*"/>
-                                </Grid.ColumnDefinitions>
-                                <TextBlock Text="Logo design" Grid.Column="0"/>
-                                <TextBlock Text="$ 30.00" Grid.Column="1" HorizontalAlignment="Center"/>
-                                <TextBlock Text="20" Grid.Column="2" HorizontalAlignment="Center"/>
-                                <TextBlock Text="$ 600.00" Grid.Column="3" HorizontalAlignment="Center" Foreground="#FF62013C"/>
-                            </Grid>
-                        </ListViewItem>
-                        <ListViewItem>
-                            <Grid HorizontalAlignment="Stretch" Margin="2" Width="480">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="3*"/>
-                                    <ColumnDefinition Width="1*"/>
-                                    <ColumnDefinition Width="1*"/>
-                                    <ColumnDefinition Width="1*"/>
-                                </Grid.ColumnDefinitions>
-                                <TextBlock Text="Backend Development" Grid.Column="0"/>
-                                <TextBlock Text="$ 45.00" Grid.Column="1" HorizontalAlignment="Center"/>
-                                <TextBlock Text="12" Grid.Column="2" HorizontalAlignment="Center"/>
-                                <TextBlock Text="$ 540.00" Grid.Column="3" HorizontalAlignment="Center" Foreground="#FF62013C"/>
-                            </Grid>
-                        </ListViewItem>
-                    </ListView>
+                    <ListBox ItemsSource="{Binding}" Name="maList_Facture" HorizontalContentAlignment="Stretch">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="0,2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="190"></ColumnDefinition>
+                                        <ColumnDefinition Width="80"></ColumnDefinition>
+                                        <ColumnDefinition Width="100"></ColumnDefinition>
+                                        <ColumnDefinition Width="80"></ColumnDefinition>
+                                        <ColumnDefinition Width="100"></ColumnDefinition>
+                                        <ColumnDefinition Width="80"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="{Binding nomProduit, Mode=TwoWay}" Grid.Column="0"></TextBlock>
+                                    
+                                    <TextBlock Text="{Binding quantite, Mode=TwoWay}" Grid.Column="1"></TextBlock>
+                                   
+                                    <TextBlock Text="{Binding prix_unite, Mode=TwoWay}" Grid.Column="3"></TextBlock>
+                                 
+                                    <TextBlock Text="{Binding prix_total, Mode=TwoWay}" Grid.Column="5"></TextBlock>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+
+                    </ListBox>
                 </StackPanel>
 
                 <StackPanel Grid.Row="2" Margin="20 0">

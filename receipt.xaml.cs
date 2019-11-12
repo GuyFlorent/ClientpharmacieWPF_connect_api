@@ -23,7 +23,7 @@ namespace ClientpharmacieWPF
         Service1Client svc = new Service1Client();
         private List<orderHisto> listeOrder;
         public ClientReturn clientReceipt;
-        public receipt(ClientReturn client1)
+        public receipt(ClientReturn client1, decimal TotalPrice,  List<ProduitPanier> listPanier)
         {
             InitializeComponent();
 
@@ -32,14 +32,14 @@ namespace ClientpharmacieWPF
             
             txtnomClient.Text = client1.nom +"  "+client1.prenom;
             txtDateCommande.Text = Order.heureCommand;
-            txt_nomProduit.Text = Order.nom_Produit;
+           /* txt_nomProduit.Text = Order.nom_Produit;
             txt_Prix_Unite.Text = Order.prix_Produit_Unite.ToString()+" €";
             txtQuantité.Text = Order.quantite.ToString();
-            txtPrix_Total.Text = Order.prix_total.ToString() + " €";
-            txt_Total_Price.Text = Order.prix_total.ToString() + " €";
+            txtPrix_Total.Text = Order.prix_total.ToString() + " €";*/
+            txt_Total_Price.Text = TotalPrice.ToString() + " €";
             txt_date_Jour.Text = Order.heureCommand;
-           
-            
+
+            maList_Facture.ItemsSource = listPanier;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
