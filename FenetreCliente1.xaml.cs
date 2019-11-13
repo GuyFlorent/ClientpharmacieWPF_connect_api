@@ -179,7 +179,7 @@ namespace ClientpharmacieWPF
 
         private void Tb_prix_unité_Click(object sender, RoutedEventArgs e)
         {
-            
+           
             panier = new ProduitPanier();
             panier.nomProduit = nomPro;
             panier.quantite = Convert.ToInt32(txtquantite_cmd.Text);
@@ -188,7 +188,7 @@ namespace ClientpharmacieWPF
             listPanier.Add(panier);
             TotalPrice += panier.prix_total;
             ma_ListView.ItemsSource = listPanier;
-           
+            ma_ListView.Items.Refresh();
         }
     }
 }
