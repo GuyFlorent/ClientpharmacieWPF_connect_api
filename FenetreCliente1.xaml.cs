@@ -204,6 +204,7 @@ namespace ClientpharmacieWPF
             if (items.CanRemove)
             {
                 items.Remove(ma_ListView.SelectedItem);
+                TotalPrice -= panier.prix_total;
             }
 
         }
