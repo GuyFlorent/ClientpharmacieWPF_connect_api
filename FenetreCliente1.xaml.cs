@@ -18,6 +18,9 @@ using System.Drawing.Printing;
 using System.Drawing;
 using System.Collections;
 using Color = System.Drawing.Color;
+using System.Collections.ObjectModel;
+using static ClientpharmacieWPF.FenetreCliente1;
+using System.ComponentModel;
 
 namespace ClientpharmacieWPF
 {
@@ -38,6 +41,8 @@ namespace ClientpharmacieWPF
         public string nomPro;
 
         public decimal TotalPrice;
+        private ObservableCollection<ProduitPanier> dataList;
+
         public FenetreCliente1(ClientReturn cli)
         {
             InitializeComponent();
@@ -187,8 +192,22 @@ namespace ClientpharmacieWPF
             panier.prix_total = (decimal)svc.infoProduits().FirstOrDefault(f => f.nom_produit == nomPro).prix_unite * Convert.ToInt32(txtquantite_cmd.Text);
             listPanier.Add(panier);
             TotalPrice += panier.prix_total;
+            
             ma_ListView.ItemsSource = listPanier;
             ma_ListView.Items.Refresh();
         }
+
+        /// Remove selected items from the ListBox.
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            IEditableCollectionView items = ma_ListView.Items; //Cast to interface
+            if (items.CanRemove)
+            {
+                items.Remove(ma_ListView.SelectedItem);
+            }
+
+        }
+
+
     }
 }

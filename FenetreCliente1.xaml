@@ -111,7 +111,7 @@
                             </StackPanel>
                             <StackPanel Grid.Row="1" Grid.Column="4">
                                 <Button x:Name="tb_prix_unité" Content="Ajouter dans le panier" Click="Tb_prix_unité_Click"></Button>
-                                <Button Content="Supprimer de la liste"></Button>
+                                <Button Content="Supprimer de la liste" Click="Button_Click"></Button>
                                 </StackPanel>
                             <StackPanel Grid.Row="2" Grid.Column="4">
                                 <Button Content="valider la commande" Click="Button_Click_1" />
@@ -140,7 +140,7 @@
                         </StackPanel>
                         <StackPanel Grid.Column="1">
                                 <Grid>
-                            <ListView ItemsSource="{Binding}" x:Name="ma_ListView" Height="200"  Width="300">
+                            <ListView ItemsSource="{Binding}" x:Name="ma_ListView" Height="200"  Width="300" >
                                         <ListView.View>
                                     <GridView >
                                         
